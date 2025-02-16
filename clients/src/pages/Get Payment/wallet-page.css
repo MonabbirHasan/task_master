@@ -1,0 +1,118 @@
+.wallet-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .wallet-header h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .wallet-summary {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+  
+  .wallet-balance {
+    width: 48%;
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  .wallet-balance h2 {
+    font-size: 1.5rem;
+  }
+  
+  .wallet-balance p {
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+  
+  .financial-graph {
+    width: 48%;
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  .financial-graph h3 {
+    font-size: 1.5rem;
+  }
+  
+  .graph-placeholder {
+    background-color: #e0e0e0;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    color: #888;
+  }
+  
+  .transaction-history {
+    margin-bottom: 30px;
+  }
+  
+  .transaction-history h3 {
+    font-size: 1.5rem;
+  }
+  
+  .transaction-history ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .transaction-history .transaction {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #f9f9f9;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+  
+  .transaction.deposit {
+    background-color: #e1f7e1;
+  }
+  
+  .transaction.withdrawal {
+    background-color: #f7e1e1;
+  }
+  
+  .wallet-actions h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+  
+  .wallet-actions button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin: 10px 0;
+    cursor: pointer;
+  }
+  
+  .wallet-actions button:hover {
+    background-color: #0056b3;
+  }
+  
+  @media (max-width: 768px) {
+    .wallet-summary {
+      flex-direction: column;
+    }
+  
+    .wallet-balance, .financial-graph {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  
+    .transaction-history .transaction {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+  

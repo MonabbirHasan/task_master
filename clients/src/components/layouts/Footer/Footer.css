@@ -1,0 +1,140 @@
+.footer {
+  background: var(--gray-dark);
+  color: var(--text-color);
+}
+
+.footer h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+.footer .logo-brand {
+  font-size: 20px;
+  color: var(--text-color);
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer ul li {
+  margin-bottom: 8px;
+}
+
+.footer ul li a {
+  color: #bbb;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer ul li a:hover {
+  color: #ff6347;
+}
+
+.footer .social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.footer .social-icons li a {
+  font-size: 22px;
+  color: #bbb;
+}
+
+.footer .social-icons li a:hover {
+  color: #ff6347;
+}
+
+.footer-line {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin: 20px 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-section {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .footer .social-icons {
+    justify-content: center;
+  }
+}
+/* Social Media Section */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  transition: 0.5s;
+  height: 100px;
+  background: #444;
+  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.social-icons .social-icon {
+  color: var(--text-color);
+  font-size: 24px;
+}
+
+.social-icons a:hover {
+  transform: scale(1.1);
+}
+
+/* Specific colors for each platform */
+.social-icons .facebook:hover {
+  background: #1877f2;
+  height: 100%;
+  width: 100%;
+  transition: 0.2s;
+  border-radius: 10px;
+}
+
+.social-icons .twitter:hover {
+  background: #1da1f2;
+  height: 100%;
+  width: 100%;
+  transition: 0.2s;
+  border-radius: 10px;
+}
+
+.social-icons .youtube:hover {
+  background: #ff0000;
+  height: 100%;
+  width: 100%;
+  transition: 0.2s;
+  border-radius: 10px;
+}
+
+.social-icons .instagram:hover {
+  background: linear-gradient(
+    45deg,
+    #f09433,
+    #e6683c,
+    #dc2743,
+    #cc2366,
+    #bc1888
+  );
+  height: 100%;
+  width: 100%;
+  transition: 0.2s;
+  border-radius: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .social-icons {
+    gap: 10px;
+  }
+}

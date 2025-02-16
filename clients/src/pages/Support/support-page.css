@@ -1,0 +1,127 @@
+.main-container {
+  background-color: var(--background-color);
+  min-height: 100vh;
+}
+
+.support-container {
+  padding: 40px 0;
+}
+
+.support-header {
+  text-align: center;
+  padding: 50px 20px;
+  background: var(--primary-color);
+  color: var(--text-color);
+  border-radius: 10px;
+}
+
+.support-header h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.support-header p {
+  font-size: 1.2rem;
+}
+
+.support-content {
+  padding: 40px 20px;
+}
+
+.support-card {
+  margin: 15px 0;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow-light);
+  background-color: var(--background-color);
+  transition: transform 0.2s ease-in-out;
+}
+
+.support-card:hover {
+  transform: translateY(-5px);
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+.support-links {
+  list-style: none;
+  padding: 0;
+}
+
+.support-links li {
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+}
+
+.support-links a {
+  text-decoration: none;
+  color: var(--primary-color);
+  transition: color 0.2s ease-in-out;
+  margin-left: 10px;
+}
+
+.support-links a:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+.support-icon {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+.support-icon:last-child {
+  color: var(--text-color);
+}
+
+.chat-button {
+  display: flex;
+  align-items: center;
+  background-color: var(--primary-color) !important;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  color: var(--text-color) !important;
+}
+
+.chat-button:hover {
+  background-color: #0056b3;
+}
+
+.chat-box {
+  position: relative;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  margin-top: 20px;
+}
+
+.chat-window {
+  background-color: var(--primary-color);
+  padding: 15px;
+  border-radius: 10px;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-chat {
+  margin-top: 15px;
+  width: 100%;
+  background-color: #dc3545;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.close-chat:hover {
+  background-color: #b52b37;
+}

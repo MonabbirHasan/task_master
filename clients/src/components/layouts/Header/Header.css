@@ -1,0 +1,73 @@
+header {
+  background: linear-gradient(
+    to right,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  box-shadow: var(--box-shadow-light);
+}
+header .brand_log {
+  text-transform: capitalize;
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-xxl);
+  font-family: cursive;
+  letter-spacing: 1px;
+}
+.header_menu.post_task {
+  background-color: var(--background-color);
+  color: var(--black);
+  border-radius: 4px;
+  padding: 2px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  animation: ctaVibrate 0.4s ease-in-out infinite;
+}
+/* @keyframes ctaVibrate {
+  0% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-2px);
+  }
+  40% {
+    transform: translateX(2px);
+  }
+  60% {
+    transform: translateX(-2px);
+  }
+  80% {
+    transform: translateX(2px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+} */
+
+header .header_menu.post_task:hover {
+  color: black;
+  animation: forwards;
+}
+header .header_menu {
+  text-decoration: none;
+  text-transform: capitalize;
+  color: var(--text-color);
+  font-size: var(--font-size-medium);
+  font-weight: var(--font-weight-600);
+  transition: 0.5s;
+  padding: 0 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 3px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header .header_menu:hover {
+  border-bottom: 3px solid var(--text-color);
+  color: var(--text-color);
+}

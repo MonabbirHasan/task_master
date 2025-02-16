@@ -1,0 +1,87 @@
+#service_slider {
+    padding: 80px 0;
+    margin-top: 40px;
+  }
+  /* SERVICE SLIDER LEFT */
+  #service_slider .service_slider_left h1 {
+    font-size: var(--font-size-xxxl);
+    padding: 10px 0;
+    font-weight: bold;
+    text-transform: capitalize;
+    color: var(--primary-color);
+  }
+  #service_slider .service_slider_left p {
+    font-size: var(--font-size-large);
+    font-weight: var(--font-weight-regular);
+    text-transform: capitalize;
+    color: var(--success-color);
+  }
+  /* service_slider_right */
+  .service_slider_right {
+    padding: 20px;
+    background-color: var(--box-shadow-light);
+    border-radius: 20px;
+  }
+  /* SLIDER IMAGE WRAPPER */
+  .service_slider_right .service_slider_img_wrapper {
+    padding: 10px;
+    height: 450px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+  }
+  /* SLIDER IMAGE LEFT */
+  .service_slider_right .service_slider_img_wrapper .image_slider.left {
+    padding: 10px;
+    animation: 20s linear 0s infinite normal none running slider_scroll;
+    transform: translateY(0);
+    cursor: pointer;
+    position: relative;
+  }
+  .service_slider_right .service_slider_img_wrapper .image_slider.left:hover {
+    animation-play-state: paused;
+  }
+  /* SLIDER IMAGE RIGHT */
+  .service_slider_right .service_slider_img_wrapper .image_slider.right {
+    padding: 10px;
+    animation: 10s linear 0s infinite normal none running slider_scroll;
+    transform: translateY(0);
+    cursor: pointer;
+    position: relative;
+  }
+  .service_slider_right .service_slider_img_wrapper .image_slider.right:hover {
+    animation-play-state: paused;
+  }
+  .service_slider_right
+    .service_slider_img_wrapper
+    .image_slider
+    .image_slider_img {
+    border-radius: 5px;
+    height: 70px;
+    width: 70px;
+  }
+  /* SLIDER IMAGE ITEMS */
+  .service_slider_right .service_slider_img_wrapper .image_items {
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: var(--background-color);
+    box-shadow: var(--box-shadow-light);
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  .service_slider_right .service_slider_img_wrapper .image_items:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--box-shadow-medium);
+  }
+  /* SCROL SLIDER ANIMATION */
+  @keyframes slider_scroll {
+    0% {
+      top: 0%;
+    }
+  
+    100% {
+      top: -100%;
+    }
+  }
+  

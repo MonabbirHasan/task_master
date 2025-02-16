@@ -1,0 +1,17 @@
+.post_task_page {
+  padding: 40px 0;
+}
+.post_task_page .post_task_page_wrapper {
+  padding: 60px 0;
+}
+
+.date_range_picker {
+  z-index: 1;
+  position: absolute;
+}
+.react-datepicker__month-container {
+  /* position: absolute; */
+  z-index: inherit;
+  /* background-color: ; */
+}
+ 

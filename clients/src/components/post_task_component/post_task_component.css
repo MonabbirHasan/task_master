@@ -1,0 +1,45 @@
+/* part_of_day_card */
+.part_of_day_card {
+  padding: 10px;
+  width: 130px;
+  background-color: var(--primary-color);
+  box-shadow: var(--box-shadow-medium);
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 10px;
+}
+.part_of_day_card:hover {
+  background-color: var(--secondary-color);
+}
+.part_of_day_card.selected {
+  background-color: var(--secondary-color);
+}
+.part_of_day_card svg {
+  color: white !important;
+}
+
+/* location_selector_card */
+.LocationSelector {
+  display: flex;
+  gap: 10px;
+}
+.location_selector_card {
+  padding: 10px;
+  width: 200px;
+  background-color: var(--primary-color);
+  box-shadow: var(--box-shadow-medium);
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 10px;
+}
+.location_selector_card.location_selected {
+  background-color: var(--secondary-color);
+}
+.location_selector_card:hover {
+  background-color: var(--secondary-color);
+}
+.location_selector_card:hover svg {
+  color: white !important;
+}

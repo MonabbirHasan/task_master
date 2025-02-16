@@ -1,0 +1,47 @@
+.payment-methods-container {
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    font-family: "Arial", sans-serif;
+  }
+  
+  .page-title {
+    text-align: left;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .payment-methods-tabs {
+    margin-bottom: 20px;
+  }
+  
+  .get-payment-tab,
+  .receive-payment-tab {
+    margin-top: 20px;
+  }
+  
+  .payment-option-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 16px;
+    padding: 16px;
+  }
+  
+  .payment-option-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    color: #444;
+  }
+  
+  .payment-option-card p {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  .payment-option-card button {
+    margin-top: 10px;
+  }
+  

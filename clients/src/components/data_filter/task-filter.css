@@ -1,0 +1,5 @@
+.task_filter_title {
+  font-size: 18px;
+  color: var(--secondary-color);
+  text-transform: capitalize;
+}
