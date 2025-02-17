@@ -1,6 +1,11 @@
 .post_task_page {
   padding: 40px 0;
 }
+.post_task_page .input_label {
+  text-transform: capitalize;
+  font-size: 14px;
+  color: var(--secondary-color);
+}
 .post_task_page .post_task_page_wrapper {
   padding: 60px 0;
 }
@@ -14,4 +19,19 @@
   z-index: inherit;
   /* background-color: ; */
 }
- 
+/* budget_fragment */
+.budget_fragment,
+.title_and_category_fragment,
+.date_fragment,
+.location_fragment,
+.details_fragment,
+.complete_fragment,
+.attachment_fragment {
+  padding: 30px 0;
+  height: 300px;
+}
+.date_fragment span {
+  text-transform: capitalize;
+  font-size: 14px;
+  color: var(--secondary-color);
+}

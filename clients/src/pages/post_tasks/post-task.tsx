@@ -1,7 +1,13 @@
-import { Col, Container, Form, Row } from "react-bootstrap";
-import Layout from "../../components/layouts/Layout";
+import { useEffect, useState } from "react";
 import "./post-task.css";
-import { useState } from "react";
+import PartOfDaySelector from "../../components/post_task_component/PartOfDaySelector";
+import LocationSelector from "../../components/post_task_component/LocationSelector";
+import DateRangePicker from "../../components/post_task_component/DateRangePicker";
+import ImageUploader from "../../components/post_task_component/ImageUpoader";
+import ButtonComponent from "../../components/Buttons/Button";
+import { Col, Container, Form, Row } from "react-bootstrap";
+import { motion, AnimatePresence } from "framer-motion";
+import Layout from "../../components/layouts/Layout";
 import {
   Alert,
   Box,
@@ -20,10 +26,14 @@ import {
   Typography,
 } from "@mui/material";
 
-import PartOfDaySelector from "../../components/post_task_component/PartOfDaySelector";
-import LocationSelector from "../../components/post_task_component/LocationSelector";
-import DateRangePicker from "../../components/post_task_component/DateRangePicker";
-import { CheckCircle, LocationCity, LocationOn } from "@mui/icons-material";
+import {
+  ArrowLeft,
+  ArrowRightAlt,
+  CheckCircle,
+  LocationOn,
+  Visibility,
+} from "@mui/icons-material";
+import { toast } from "react-toastify";
 const categories = [
   "Home Services",
   "Delivery",
@@ -37,22 +47,27 @@ const PostTask = () => {
   const [InitialState, setInitialState] = useState<number>(1);
   const [Task_Budget, setTaskBudget] = useState<number>(0);
   const [Task_Title, setTaskTitle] = useState("");
-  const [Task_Date, setTaskDate] = useState<string | number>();
-  const [Task_Location, setTaskLocation] = useState<string | undefined>();
-  const [Task_Detail, setTaskDetail] = useState<string>();
-  const [Task_Category, setTaskCategory] = useState<string>();
-  const [error, setError] = useState<string>("");
-
-  const [IsflexibleTime, setIsflexibleTime] = useState(false);
-  const [isflexible, setIsflexible] = useState(false);
-  const [FlexibleTime, setFlexibleTime] = useState({});
-
-  const [isOpen, setIsOpen] = useState(false);
-  const [dateRange, setDateRange] = useState<[Date | null, Date | null]>([
+  const [Task_Date, setTaskDate] = useState<[Date | null, Date | null]>([
     null,
     null,
   ]);
+  const [Task_Location, setTaskLocation] = useState<string | undefined>();
+  const [Task_Detail, setTaskDetail] = useState<string | any>();
+  const [Task_Category, setTaskCategory] = useState<string>();
+  const [Task_Attacement, setTask_Attacement] = useState<File[]>([]);
 
+  const [error, setError] = useState<string>("");
+  const [IsflexibleTime, setIsflexibleTime] = useState(false);
+  const [isflexible, setIsflexible] = useState(false);
+  const [FlexibleTime, setFlexibleTime] = useState({});
+  const [IsCalenderOpen, setIsCalenderOpen] = useState(false);
+
+  useEffect(() => {
+    console.log(Task_Attacement);
+  }, [Task_Attacement]);
+  ///////////////////////////////////
+  // STEP 1 BUDGETS FRAGMENT
+  ///////////////////////////////////
   const Step1 = () => {
     return (
       <div className="budget_fragment">
@@ -83,13 +98,13 @@ const PostTask = () => {
       </div>
     );
   };
+  ///////////////////////////////////////
+  // STEP 2 TITLE AND CATEGORY FRAGMENT
+  ///////////////////////////////////////
   const Step2 = () => {
     return (
       <div className="title_and_category_fragment">
         <Box>
-          <Typography variant="h4" gutterBottom sx={{ fontWeight: "bold" }}>
-            Describe Your Task
-          </Typography>
           <Typography variant="body2" color="textSecondary" gutterBottom>
             Provide a clear and detailed title to help Taskers understand what
             you need.
@@ -101,6 +116,7 @@ const PostTask = () => {
               fullWidth
               label="Task Title"
               variant="outlined"
+              size="medium"
               value={Task_Title}
               onChange={(e) => setTaskTitle(e.target.value)}
               error={!!error}
@@ -115,6 +131,7 @@ const PostTask = () => {
               fullWidth
               label="Select Category"
               variant="outlined"
+              size="medium"
               value={Task_Category}
               onChange={(e) => setTaskCategory(e.target.value)}
             >
@@ -129,23 +146,28 @@ const PostTask = () => {
       </div>
     );
   };
+  //////////////////////////////
+  // STEP 3 DATE FRAGMENT
+  //////////////////////////////
   const Step3 = () => {
     return (
       <div className="date_fragment">
-        <Typography component="span">when do you need this done?</Typography>
+        <Typography component="span">
+          When this task needs to be completed ?
+        </Typography>
 
         <Stack direction="row" spacing={1} paddingTop={3}>
           {/* DATE SELECTION */}
           <div className="date_selection">
             <Button
-              variant={dateRange[0] && dateRange[1] ? "contained" : "outlined"}
+              variant={Task_Date[0] && Task_Date[1] ? "contained" : "outlined"}
               size="small"
               role="button"
               aria-label="on date"
               LinkComponent="label"
               sx={{ textTransform: "capitalize", borderRadius: 10 }}
               onClick={() => {
-                setIsOpen(true);
+                setIsCalenderOpen(true);
                 setIsflexible(false);
               }}
             >
@@ -153,10 +175,10 @@ const PostTask = () => {
             </Button>
 
             <DateRangePicker
-              open={isOpen}
-              onClose={() => setIsOpen(false)} // Close on selection
-              PickerDate={setDateRange}
-              value={dateRange}
+              open={IsCalenderOpen}
+              onClose={() => setIsCalenderOpen(false)} // Close on selection
+              PickerDate={setTaskDate}
+              value={Task_Date}
               fromLabel="Start Date"
               toLabel="End Date"
             />
@@ -171,7 +193,7 @@ const PostTask = () => {
             sx={{ textTransform: "capitalize", borderRadius: 10 }}
             onClick={() => {
               isflexible ? setIsflexible(false) : setIsflexible(true);
-              setDateRange([null, null]); // Emptying the date range
+              setTaskDate([null, null]); // Emptying the date range
             }}
           >
             I'm Flexible
@@ -210,6 +232,9 @@ const PostTask = () => {
       </div>
     );
   };
+  ///////////////////////////////////
+  // STEP 4 LOCATIONS FRAGMENT
+  ///////////////////////////////////
   const Step4 = () => {
     const countries = ["USA", "Canada", "India"];
     return (
@@ -218,10 +243,12 @@ const PostTask = () => {
         <div
           className={`${Task_Location == "online" && "d-none"} locations_input`}
         >
-          <Typography>Where would you like this to be done?</Typography>
-          <Stack direction="row" spacing={1}>
+          <Typography paddingTop={3} fontSize={14}>
+            Where would you like this to be done?
+          </Typography>
+          <Stack direction="row" spacing={1} pt={1}>
             <FormControl>
-              <Select size="small">
+              <Select size="small" variant="filled">
                 {countries.map((countryName) => (
                   <MenuItem key={countryName} value={countryName}>
                     {countryName}
@@ -232,6 +259,7 @@ const PostTask = () => {
             <FormControl>
               <TextField
                 size="small"
+                variant="filled"
                 value={Task_Location}
                 onChange={(e) => setTaskLocation(e.target.value)}
                 InputProps={{
@@ -241,7 +269,6 @@ const PostTask = () => {
                     </InputAdornment>
                   ),
                 }}
-                variant="outlined"
               />
             </FormControl>
           </Stack>
@@ -249,27 +276,52 @@ const PostTask = () => {
       </div>
     );
   };
+  ///////////////////////////////////
+  // STEP 5 DETAILS FRAGMENT
+  ///////////////////////////////////
   const Step5 = () => {
     return (
       <div className="details_fragment">
-        <FormControl sx={{ minWidth: 320 }}>
-          <Form.Label>key Details about the task</Form.Label>
+        <FormControl sx={{ width: window.innerWidth / 3 }}>
+          <Form.Label className="input_label">
+            key Details about the task
+          </Form.Label>
           <TextField
             fullWidth
-            rows={4}
+            rows={5}
             multiline
-            variant="outlined"
+            variant="filled"
             type="text"
             value={Task_Detail}
             onChange={(e) => setTaskDetail(e.target.value)}
             placeholder="Write a Summary of the key Details"
+            error={!!error}
             helperText={error}
           />
         </FormControl>
       </div>
     );
   };
+  ///////////////////////////////////
+  // STEP 6 ATTACEMENTS FRAGMENT
+  ///////////////////////////////////
   const Step6 = () => {
+    return (
+      <div className="attachment_fragment">
+        <Typography className="input_label">upload image(optional)</Typography>
+        {/* ImageUploader Component */}
+        <ImageUploader
+          onImagesChange={(e: any) => {
+            setTask_Attacement(e);
+          }}
+        />
+      </div>
+    );
+  };
+  ///////////////////////////////////
+  // STEP 7 COMPLETE FRAGMENT
+  ///////////////////////////////////
+  const Step7 = () => {
     return (
       <div className="complete_fragment">
         <CheckCircle
@@ -277,12 +329,16 @@ const PostTask = () => {
           fontSize="large"
           htmlColor="green"
         />
-        <Typography>
+
+        <Typography className="input_label">
           Thanks; you have successfully submited your task
         </Typography>
       </div>
     );
   };
+  ///////////////////////////////////
+  // STEP CONTROLLER > NEXT
+  ///////////////////////////////////
   const StepControlNext = () => {
     switch (InitialState) {
       case 1:
@@ -309,45 +365,59 @@ const PostTask = () => {
       case 3:
         // IsflexibleTime
         // FlexibleTime
-        // dateRange[1]
-        // dateRange[0]
+        // Task_Date[1]
+        // Task_Date[0]
         if (
-          !isflexible ||
-          Object.keys(FlexibleTime).length == 0 ||
-          !dateRange[1] ||
-          !dateRange[0]
+          isflexible === true ||
+          Object.keys(FlexibleTime).length > 0 ||
+          Task_Date[0] ||
+          Task_Date[1]
         ) {
-          setError("Please Provide Any of Date Of Time");
-          return;
+          setInitialState(4); // Proceed if at least one value exists
+          setError("");
+        } else {
+          setError("Please provide at least one date or time.");
         }
-        setInitialState(4);
+
         break;
       case 4:
         // Task_Location
         if (Task_Location?.trim() === "") {
           setError("Please Select One Locations!");
-          return;
+        } else {
+          setError("");
+          setInitialState(5);
         }
-        setInitialState(5);
         break;
       case 5:
-        // details
-        if (Task_Detail?.trim() === "") {
-          setError("Please Provide A Details about the Task!");
-          return;
+        if (!Task_Detail || Task_Detail.trim() === "") {
+          setError("Please provide details about the task!");
+        } else if (Task_Detail.length > 100) {
+          setError("Task details must be less than 100 characters.");
+        } else {
+          setError("");
+          setInitialState(6);
         }
-        setInitialState(6);
         break;
       case 6:
-        setInitialState(7);
+        setTimeout(() => {
+          setInitialState(7);
+          handle_submit_task();
+        }, 2000);
         break;
       default:
-        setInitialState(1);
+        alert("view listing");
         break;
     }
   };
+  ///////////////////////////////////
+  // STEP CONTROLLER > BACKWORD
+  ///////////////////////////////////
   const StepControlPrev = () => {
     switch (InitialState) {
+      case 7:
+        setInitialState(6);
+        break;
       case 6:
         setInitialState(5);
         break;
@@ -367,6 +437,9 @@ const PostTask = () => {
         break;
     }
   };
+  ///////////////////////////////////
+  // STEP MENUES OBJECT DATA
+  ///////////////////////////////////
   const StepMenu = [
     {
       step: 1,
@@ -376,8 +449,21 @@ const PostTask = () => {
     { step: 3, name: "date" },
     { step: 4, name: "location" },
     { step: 5, name: "description" },
-    { step: 6, name: "complete" },
+    { step: 6, name: "Attachment" },
+    { step: 7, name: "complete" },
   ];
+  ///////////////////////////////////
+  // HANDLE SUBMIT TASKS
+  ///////////////////////////////////
+  const handle_submit_task = () => {
+    try {
+      const data = {};
+      toast.success("Task Submited Successful");
+      // const response=await axios.post(`${}/task`,{})
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <Layout>
       <div className="post_task_page">
@@ -413,41 +499,85 @@ const PostTask = () => {
                   <Typography
                     variant="h4"
                     gutterBottom
-                    sx={{ fontWeight: "bold", color: "var(--primary-color)" }}
+                    sx={{
+                      fontWeight: "bold",
+                      color: "var(--secondary-color)",
+                      textTransform: "capitalize",
+                    }}
                   >
                     Let’s begin with the essentials of your tasks.
                   </Typography>
-                  {InitialState == 1 && Step1()}
-                  {InitialState == 2 && Step2()}
-                  {InitialState == 3 && Step3()}
-                  {InitialState == 4 && Step4()}
-                  {InitialState == 5 && Step5()}
-                  {InitialState == 6 && Step6()}
+                  <div className="relative">
+                    {/* Page Transition Effect */}
+                    <AnimatePresence mode="wait">
+                      <motion.div
+                        key={InitialState} // Ensures animation runs when state changes
+                        initial={{ opacity: 0, x: 50 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: -50 }}
+                        transition={{ duration: 0.5, ease: "easeInOut" }}
+                        className="absolute w-full"
+                      >
+                        {InitialState == 1 && Step1()}
+                        {InitialState == 2 && Step2()}
+                        {InitialState == 3 && Step3()}
+                        {InitialState == 4 && Step4()}
+                        {InitialState == 5 && Step5()}
+                        {InitialState == 6 && Step6()}
+                        {InitialState == 7 && Step7()}
+                      </motion.div>
+                    </AnimatePresence>
+                  </div>
+
                   {/* STEPS CONTROLS */}
                   <Box width={500} gap={3} mt={2} display="flex">
-                    <Button
-                      fullWidth
-                      variant="contained"
-                      color="primary"
-                      sx={{ textTransform: "none", borderRadius: 30 }}
+                    <ButtonComponent
                       onClick={StepControlPrev}
-                    >
-                      Back
-                    </Button>
-                    <Button
-                      fullWidth
-                      variant="contained"
+                      size="small"
                       color="success"
-                      sx={{ textTransform: "none", borderRadius: 30 }}
-                      // disabled={!!error || !budget}
+                      variant="contained"
+                      btn_label={
+                        <>
+                          <ArrowLeft />
+                          <span>back</span>
+                        </>
+                      }
+                    />
+
+                    <ButtonComponent
                       onClick={StepControlNext}
-                    >
-                      {InitialState == 5
-                        ? "Get Quotes"
-                        : InitialState == 6
-                        ? "Done"
-                        : "Next"}
-                    </Button>
+                      size="small"
+                      color="primary"
+                      variant="contained"
+                      btn_label={
+                        InitialState == 6 ? (
+                          <div
+                            style={{ display: "flex", alignItems: "center" }}
+                          >
+                            <span>Get Quotes</span>
+                            <ArrowRightAlt style={{ marginLeft: "5px" }} />
+                          </div>
+                        ) : InitialState == 7 ? (
+                          <div
+                            style={{ display: "flex", alignItems: "center" }}
+                          >
+                            <span>view listing</span>
+                            <span className="px-1" />
+                            <Visibility fontSize="small" />
+                          </div>
+                        ) : (
+                          <div
+                            style={{ display: "flex", alignItems: "center" }}
+                          >
+                            <span>go next</span>
+                            <ArrowRightAlt
+                              fontSize="small"
+                              style={{ marginLeft: "5px" }}
+                            />
+                          </div>
+                        )
+                      }
+                    />
                   </Box>
                 </div>
               </Col>

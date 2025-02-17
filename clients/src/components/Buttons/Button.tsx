@@ -1,20 +1,35 @@
 import React from "react";
-import "./button.css";
-import { ArrowRightAlt } from "@mui/icons-material";
+import { Button } from "@mui/material";
 
 interface ButtonProps {
   onClick: () => void;
-  title: string;
+  // Updated for ReactNode (to allow JSX)
+  btn_label: string | React.ReactNode;
+  variant: string | any;
+  size: string | any;
+  color: string | any;
   style?: React.CSSProperties;
 }
 
-const Button: React.FC<ButtonProps> = ({ onClick, title, style = {} }) => {
+const ButtonComponent: React.FC<ButtonProps> = ({
+  onClick,
+  btn_label,
+  variant = "outlined",
+  color,
+  style = { textTransform: "capitalize" },
+  size,
+}) => {
   return (
-    <button style={style} className="post-task-btn" onClick={onClick}>
-      {title}
-      <ArrowRightAlt />
-    </button>
+    <Button
+      color={color}
+      size={size}
+      variant={variant}
+      onClick={onClick}
+      style={style}
+    >
+      {btn_label}
+    </Button>
   );
 };
 
-export default Button;
+export default ButtonComponent;
