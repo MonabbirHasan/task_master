@@ -66,7 +66,16 @@ const TaskFilter: React.FC<FilterProps> = ({ data, results }) => {
   };
 
   return (
-    <div style={{ marginBottom: "20px" }}>
+    <div
+      style={{
+        marginBottom: "20px",
+        background: "var(--background-color)",
+        boxShadow: "var(--box-shadow-light)",
+        padding: 20,
+        borderRadius: 10,
+        border: "1px solid white",
+      }}
+    >
       <h2 className="mb-3 task_filter_title">Filter</h2>
       {/* Location Filter */}
       <Stack direction="column" spacing={2}>
@@ -150,7 +159,10 @@ const TaskFilter: React.FC<FilterProps> = ({ data, results }) => {
           onClick={applyFilter}
           variant="contained"
           size="small"
-          style={{ background: "var(--secondary-color)" }}
+          style={{
+            background: "var(--secondary-color)",
+            textTransform: "capitalize",
+          }}
         >
           Apply
         </Button>

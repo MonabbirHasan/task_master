@@ -7,15 +7,19 @@ import {
   Stack,
   Typography,
   Box,
+  MenuItem,
+  Menu,
 } from "@mui/material";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import {
   AccessTime,
   BadgeOutlined,
   CalendarMonth,
+  Favorite,
   FavoriteBorder,
   LocationOn,
   Message,
+  MoreVert,
   Star,
   StarBorder,
   StarHalf,
@@ -32,6 +36,10 @@ type TaskCardProps = {
   date: string;
   requested: number;
   status: string;
+  isFavorit: boolean;
+  card_type: string;
+  favorit_btn: () => void;
+  message_btn: () => void;
 };
 
 const TaskCard: React.FC<TaskCardProps> = ({
@@ -42,8 +50,19 @@ const TaskCard: React.FC<TaskCardProps> = ({
   date,
   requested,
   status,
+  isFavorit,
+  card_type,
+  favorit_btn,
+  message_btn,
 }) => {
-
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event: any) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
   // SVG ICON
   const CalendarIcon: React.FC = () => (
     <svg fill="#9BA0BC" height="20" width="20" viewBox="0 0 24 24">
@@ -99,13 +118,58 @@ const TaskCard: React.FC<TaskCardProps> = ({
   return (
     <article
       className="task_card"
-      onClick={() => {
-        alert(title);
-      }}
+      // onClick={() => {
+      //   alert(title);
+      // }}
     >
+      {/* <div className="favorit_card"></div>
+      <div className="my_task_card"></div>
+      <div className="tasks_card"></div> */}
       {/* CARD TIMER */}
-      <div className="task_card_timer">
+      <Menu
+        id="basic-menu"
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+        MenuListProps={{
+          "aria-labelledby": "basic-button",
+        }}
+      >
+        <MenuItem style={{ fontSize: 12 }} onClick={handleClose}>
+          Undo Favorite{" "}
+        </MenuItem>
+        <MenuItem style={{ fontSize: 12 }} onClick={handleClose}>
+          View Task
+        </MenuItem>
+      </Menu>
+      <div className="task_card_timer pt-2">
         <Typography variant="body2">40 Minutes Ago, uploaded</Typography>
+        {card_type == "favorit" ? (
+          <IconButton
+            aria-controls={open ? "basic-menu" : undefined}
+            aria-haspopup="true"
+            aria-expanded={open ? "true" : undefined}
+            onClick={handleClick}
+          >
+            <MoreVert fontSize="small" />
+          </IconButton>
+        ) : card_type == "my_task" ? (
+          <IconButton
+            aria-controls={open ? "basic-menu" : undefined}
+            aria-haspopup="true"
+            aria-expanded={open ? "true" : undefined}
+            onClick={handleClick}
+          >
+            <MoreVert fontSize="small" />
+          </IconButton>
+        ) : (
+          <Typography></Typography>
+        )}
+        {/* {card_type == "my_task" && (
+          <IconButton>
+            <MoreVert fontSize="small" />
+          </IconButton>
+        )} */}
       </div>
 
       {/* CARD HEADER */}
@@ -201,11 +265,25 @@ const TaskCard: React.FC<TaskCardProps> = ({
           />
         </span>
         <div className="task_card_footer-action">
-          <IconButton aria-label="Send Message" role="button" size="medium">
+          <IconButton
+            onClick={message_btn}
+            aria-label="Send Message"
+            role="button"
+            size="medium"
+          >
             <Message htmlColor="var(--primary-color)" />
           </IconButton>
-          <IconButton aria-label="Add to Favorites" role="button" size="medium">
-            <FavoriteBorder htmlColor="orangered" />
+          <IconButton
+            onClick={favorit_btn}
+            aria-label="Add to Favorites"
+            role="button"
+            size="medium"
+          >
+            {isFavorit ? (
+              <Favorite htmlColor="orangered" />
+            ) : (
+              <FavoriteBorder htmlColor="orangered" />
+            )}
           </IconButton>
         </div>
       </div>

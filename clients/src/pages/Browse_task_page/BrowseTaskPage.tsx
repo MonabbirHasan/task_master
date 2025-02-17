@@ -6,7 +6,7 @@ import Footer from "../../components/layouts/Footer/Footer";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import "./browse_task_page.css";
 import { FormControl } from "@mui/material";
-
+import { motion, AnimatePresence } from "framer-motion";
 const taskData = [
   {
     title:
@@ -64,22 +64,46 @@ const BrowseTaskPage = () => {
               <Row>
                 {/* Filter Section */}
                 <Col lg={3}>
-                  <div className="bg-white p-4 rounded shadow-sm border ">
-                    <TaskFilter data={taskData} results={setFilteredTasks} />
-                  </div>
+                  <TaskFilter data={taskData} results={setFilteredTasks} />
                 </Col>
                 <Col>
                   {filteredTasks.slice(0, 6).map((items, index) => (
-                    <TaskCard
-                      title={items.title}
-                      price={items.price}
-                      location={items.location}
-                      flexible={items.flexible}
-                      date={items.date}
-                      requested={items.requested}
-                      status={items.status}
-                    />
+                    <AnimatePresence mode="wait">
+                      <motion.div
+                        key={
+                          index ||
+                          items.price ||
+                          items.location ||
+                          items.status ||
+                          items.flexible
+                        }
+                        initial={{ opacity: 0, y: 50 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -50 }}
+                        transition={{ duration: 0.5, ease: "easeInOut" }}
+                        className="w-full"
+                      >
+                        <TaskCard
+                          title={items.title}
+                          price={items.price}
+                          location={items.location}
+                          flexible={items.flexible}
+                          date={items.date}
+                          requested={items.requested}
+                          isFavorit={false}
+                          card_type="tasks"
+                          status={items.status}
+                          favorit_btn={() => {
+                            alert("favorit");
+                          }}
+                          message_btn={() => {
+                            alert("message");
+                          }}
+                        />
+                      </motion.div>
+                    </AnimatePresence>
                   ))}
+
                   <FormControl
                     sx={{
                       display: "flex",

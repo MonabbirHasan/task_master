@@ -3,8 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ForgotPassword from "../pages/Forgot Password/forgot-password";
 import TaskList from "../pages/Task List/task-list";
 import ChangePassword from "../pages/Change Password/change-password";
-import Notifications from "../pages/Notifications/Notifications";
-import Messages from "../pages/Messages/Messages";
+ import Messages from "../pages/Messages/Messages";
 import PostTask from "../pages/post_tasks/post-task";
 import PaymentHistory from "../pages/dashboard_page/Payment History/payment-history";
 import PaymentMethods from "../pages/PaymentMethods/payment-methods";
@@ -30,7 +29,7 @@ import {
   FavoritePage,
   ProfileLayouts,
   BlogDetails,
-  HomePage,
+  HomePage,NotificationPage
 } from "../pages/page";
 
 const AppRoutes = () => (
@@ -62,7 +61,7 @@ const AppRoutes = () => (
       {/* <Route path="/profile" element={<ProfilePage />} /> */}
       {/* 
       <Route path="/profile/view" element={<ProfileViewPage />} /> */}
-      <Route path="/notifications" element={<Notifications />} />
+      <Route path="/notifications" element={<NotificationPage />} />
       <Route path="/chat" element={<Messages />} />
       <Route path="/payment-history" element={<PaymentHistory />} />
       <Route path="/payment-method" element={<PaymentMethods />} />

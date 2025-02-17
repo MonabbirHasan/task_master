@@ -1,0 +1,31 @@
+.notification-page {
+  padding: 50px 0;
+}
+.notification_tabs {
+  background-color: var(--background-color) !important;
+  /* box-shadow: var(--box-shadow-light); */
+  border: 1px solid var(--background-color);
+  padding: 20px;
+  border-radius: 10px;
+  position: sticky;
+}
+.notification_tabs_menu a {
+  text-transform: capitalize !important;
+  font-weight: 400 !important;
+  color: var(--secondary-color) !important;
+}
+.notification_card_item {
+  background-color: var(--background-color) !important;
+  border: 1px solid var(--background-color);
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.notification_card_item p {
+  margin: 0;
+}
+.notification_card_item .notification_card_title {
+  text-transform: capitalize;
+  font-size: 14px;
+  color: var(--secondary-color);
+}

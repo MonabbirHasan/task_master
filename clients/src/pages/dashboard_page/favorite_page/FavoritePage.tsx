@@ -14,9 +14,10 @@ import "./favorite_page.css";
 import { NavLink } from "react-router-dom";
 import { Col, Container, Row } from "react-bootstrap";
 import TaskCard from "../../../components/task_card/task-card";
-import ServiceCard from "../../../components/service_card/ServiceCard";
+import ServiceCard from "../../../components/gig_card/ServiceCard";
 import TaskFilter from "../../../components/data_filter/TaskFilter";
 import TaskDetails from "../../../components/task_details/task-details";
+import PageTitle from "../../../components/page_title/PageTitle";
 
 const taskData = [
   {
@@ -117,18 +118,12 @@ const taskData = [
   },
 ];
 const FavoritePage = () => {
-  const [TaskDetailsSidebar, setTaskDetailsSidebar] = useState(false);
-  const handleCloseSidebar = () => setTaskDetailsSidebar(false);
-  const handleShowSidebar = () => setTaskDetailsSidebar(true);
   const [filteredTasks, setFilteredTasks] = useState(taskData);
   return (
-    <div>
-      <Container>
+    <div className="favorite_page">
+      <Container fluid>
         <Box mx="auto" p={3}>
-          <Typography variant="h5" fontWeight="bold" gutterBottom>
-            Your Favorite Tasks
-          </Typography>
-
+          <PageTitle title="my favorites tasks" />
           {taskData.length === 0 ? (
             <Typography color="textSecondary" align="center">
               No favorites added yet.
@@ -137,37 +132,34 @@ const FavoritePage = () => {
             <Row lg={4}></Row>
           )}
           {/* Task List */}
-          <div className="task_filter">
-            <TaskFilter data={taskData} results={setFilteredTasks} />
-          </div>
 
-          {/* task list */}
-          <Row lg={3}>
-            {filteredTasks.map((items, index) => (
-              <Col key={index}>
+          <Row>
+            <Col xs={12} md={5} lg={4}>
+              <TaskFilter data={taskData} results={setFilteredTasks} />
+            </Col>
+            <Col xs={12} md={7} lg={8}>
+              {filteredTasks.map((items, index) => (
                 <TaskCard
+                  key={index}
                   title={items.title}
                   price={items.price}
                   location={items.location}
                   flexible={items.flexible}
                   date={items.date}
                   requested={items.requested}
+                  isFavorit={true}
+                  card_type="favorit"
                   status={items.status}
-                  author="https://i.pravatar.cc/100?u=2"
-                  author_img={true}
-                  author_name="Monabbirhasan"
-                  onClick={handleShowSidebar}
+                  favorit_btn={() => {
+                    alert("favorit");
+                  }}
+                  message_btn={() => {
+                    alert("message");
+                  }}
                 />
-              </Col>
-            ))}
+              ))}
+            </Col>
           </Row>
-
-          {/* task details */}
-          <TaskDetails
-            taskId={""}
-            show={TaskDetailsSidebar}
-            handleClose={handleCloseSidebar}
-          />
         </Box>
       </Container>
     </div>

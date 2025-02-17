@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { Box, Typography } from "@mui/material";
-import { Col, Container, Row } from "react-bootstrap";
-import TaskCard from "../../../components/task_card/task-card";
 import TaskFilter from "../../../components/data_filter/TaskFilter";
-import TaskDetails from "../../../components/task_details/task-details";
+import MyTaskCard from "../../../components/task_card/my-task-card";
+import PageTitle from "../../../components/page_title/PageTitle";
+import TaskCard from "../../../components/task_card/task-card";
+import { motion, AnimatePresence } from "framer-motion";
+import { Col, Container, Row } from "react-bootstrap";
 import "./my_task_page.css";
 const taskData = [
   {
@@ -104,58 +105,53 @@ const taskData = [
   },
 ];
 const MyTaskPage = () => {
-  const [TaskDetailsSidebar, setTaskDetailsSidebar] = useState(false);
-  const handleCloseSidebar = () => setTaskDetailsSidebar(false);
-  const handleShowSidebar = () => setTaskDetailsSidebar(true);
   const [filteredTasks, setFilteredTasks] = useState(taskData);
   return (
     <div className="my_task_page">
-      <Container>
-
-        {/* Header & Filters */}
-        <Box
-          display="flex"
-          justifyContent="space-between"
-          alignItems="center"
-          mb={3}
-        >
-          <Typography variant="h5" fontWeight="bold">
-            My Tasks
-          </Typography>
-        </Box>
-
-        {/* Task List */}
-        <div className="task_filter">
-          <TaskFilter data={taskData} results={setFilteredTasks} />
-        </div>
-        
-        {/* task list */}
-        <Row lg={3}>
-          {filteredTasks.map((items, index) => (
-            <Col key={index}>
-              <TaskCard
-                title={items.title}
-                price={items.price}
-                location={items.location}
-                flexible={items.flexible}
-                date={items.date}
-                requested={items.requested}
-                status={items.status}
-                author="https://i.pravatar.cc/100?u=2"
-                author_img={true}
-                author_name="Monabbirhasan"
-                onClick={handleShowSidebar}
-              />
-            </Col>
-          ))}
+      <Container fluid>
+        <PageTitle title="my tasks" subtitle="" />
+        <Row>
+          <Col xs={12} md={5} lg={4}>
+            <TaskFilter data={taskData} results={setFilteredTasks} />
+          </Col>
+          <Col xs={12} md={7} lg={8}>
+            {filteredTasks.map((items, index) => (
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={
+                    index ||
+                    items.price ||
+                    items.location ||
+                    items.status ||
+                    items.flexible
+                  }
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -50 }}
+                  transition={{ duration: 0.5, ease: "easeInOut" }}
+                  className="w-full"
+                >
+                  <MyTaskCard
+                    title={items.title}
+                    category={"cleaning"}
+                    location={items.location}
+                    budget={items.price}
+                    date={items.date}
+                    view_btn={function (): void {
+                      alert("view");
+                    }}
+                    edit_btn={function (): void {
+                      alert("edit");
+                    }}
+                    delete_btn={function (): void {
+                      alert("delete");
+                    }}
+                  />
+                </motion.div>
+              </AnimatePresence>
+            ))}
+          </Col>
         </Row>
-
-        {/* task details */}
-        <TaskDetails
-          taskId={""}
-          show={TaskDetailsSidebar}
-          handleClose={handleCloseSidebar}
-        />
       </Container>
     </div>
   );

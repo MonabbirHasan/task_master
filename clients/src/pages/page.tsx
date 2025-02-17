@@ -7,6 +7,7 @@ export { default as PostServicePage } from "./dashboard_page/post_service_page/P
 export { default as ProfilePage } from "./dashboard_page/profile_page/ProfilePage";
 export { default as ProfileViewPage } from "./dashboard_page/profile_page/ProfileViewPage";
 export { default as FavoritePage } from "./dashboard_page/favorite_page/FavoritePage";
+export { default as NotificationPage } from "./notification_page/NotificationPage";
 export { default as ProfileLayouts } from "./dashboard_page/ProfileLayouts";
 export { default as BlogDetails } from "./blog_page/BlogDetails";
 export { default as HomePage } from "./Home/home-page";

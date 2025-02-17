@@ -4,7 +4,7 @@ import Footer from "../../components/layouts/Footer/Footer";
 import "./services_page.css";
 import { Col, Container, Row } from "react-bootstrap";
 import ServiceFilter from "../../components/data_filter/ServiceFilter";
-import ServiceCard from "../../components/service_card/ServiceCard";
+import GigCard from "../../components/gig_card/GigCard";
 const services_data = [
   {
     id: 1,
@@ -157,6 +157,7 @@ const services_data = [
     reviews: 21,
   },
 ];
+
 const ServicesPage = () => {
   const [filteredServices, setFilteredServices] =
     useState<any[]>(services_data);
@@ -166,26 +167,32 @@ const ServicesPage = () => {
       <Container fluid>
         <div className="service_page_wrapper">
           <div className="service_filter">
-            <ServiceFilter data={services_data} results={setFilteredServices} />
+            {/* <ServiceFilter data={services_data} results={setFilteredServices} /> */}
           </div>
           {/* service listing */}
           <div className="service_listing">
             <Row lg={4}>
               {filteredServices.map((service, index) => (
-                <Col>
-                  <ServiceCard
-                    availability={service.availability}
-                    category={service.category}
-                    hourlyRate={service.hourlyRate}
-                    img="https://ideas.darden.virginia.edu/sites/default/files/styles/full_width_1024px_5_3_/public/2024-09/AI%20ART%20ITA.jpg?itok=CIaF2iIX"
-                    rating={service.rating}
-                    reviews={service.reviews}
-                    title={service.title}
-                    warranty={service.warranty}
-                    key={index}
-                    edit={false}
-                  />
-                </Col>
+                <GigCard
+                  title={""}
+                  category={""}
+                  hourlyRate={""}
+                  availability={""}
+                  warranty={""}
+                  tags={""}
+                  description={""}
+                  image={""}
+                  onClick={function (): void {
+                    throw new Error("Function not implemented.");
+                  }}
+                  skills={""}
+                  clientReviews={[]}
+                  estimatedCompletionTime={""}
+                  location={""}
+                  priceRange={""}
+                  deliveryMethod={""}
+                  extraServices={[]}
+                />
               ))}
             </Row>
           </div>

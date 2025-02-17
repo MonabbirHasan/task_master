@@ -4,7 +4,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import { Avatar, Rating, Stack } from "@mui/material";
 import { Verified } from "@mui/icons-material";
 import Header from "../../../components/layouts/Header/Header";
-import ServiceCard from "../../../components/service_card/ServiceCard";
+import ServiceCard from "../../../components/gig_card/ServiceCard";
 const services_data = [
   {
     id: 1,
