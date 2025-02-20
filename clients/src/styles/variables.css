@@ -1,63 +1,74 @@
-/* Colors */
-:root {
-  --primary-color: #007bff; /* Main website theme color */
-  --secondary-color: #0056b3; /* Accent color */
-  --primary-color-light: #343a40; /* Lighter shade of primary */
-  --text-color: #ffffff; /* White text */
-  --text-secondary-color: #ccc; /* Secondary text */
-  --background-color: #f8f9fa; /* Light background */
-  --background-dark: #121212; /* Dark mode background */
+/* Global Reset */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;;
+}
 
-  /* Neutral colors */
+/* Theme Colors */
+:root {
+  --primary-color: #0057b8; /* Deep Blue - Trust & Reliability */
+  --secondary-color: #ff6f61; /* Warm Coral - CTA & Highlights */
+
+  /* Backgrounds */
+  --background-color: #f8f9fa; /* Light Mode Background */
+  --background-dark: #1c1c1e; /* Dark Mode Background */
+
+  /* Text Colors */
+  --text-color: #333333; /* Standard Text */
+  --text-secondary-color: #6c757d; /* Muted Text */
+  --text-light: #ffffff; /* White Text */
+
+  /* Neutral Colors */
   --black: #000000;
   --white: #ffffff;
   --gray-light: #e0e0e0;
   --gray-dark: #6c757d;
 
-  /* Success, Warning, and Error colors */
+  /* UI Status Colors */
   --success-color: #28a745;
   --warning-color: #ffc107;
   --error-color: #dc3545;
 
-  /* Hover States */
-  --primary-hover: #1e1e1e; /* Darker shade for primary hover */
-  --secondary-hover: #0056b3; /* Darker shade for secondary hover */
-}
+  /* Button & Hover States */
+  --primary-hover: #0047a3; /* Darker Blue */
+  --secondary-hover: #e55a50; /* Darker Coral */
+  --button-color: #007bff; /* Primary Button */
+  --button-hover: #0056b3; /* Button Hover */
 
-/* Typography */
-:root {
-  --font-family: "Arial", sans-serif; /* Default font family */
-  --font-size-base: 16px; /* Base font size */
-  --font-size-large: 18px; /* Larger text */
-  --font-size-small: 14px; /* Smaller text */
-  --font-size-xxl: 24px; /*extra large text*/
-  --font-size-xxxl: 44px; /*extra large text*/
-
-  /* Font weights */
-  --font-weight-regular: 400;
-  --font-weight-bold: 700;
-  --font-weight-500: 500;
-  --font-weight-600: 500;
-  --font-weight-light: 300;
-}
-
-/* Spacing */
-:root {
-  --spacing-small: 8px;
-  --spacing-medium: 16px;
-  --spacing-large: 24px;
-}
-
-/* Borders */
-:root {
-  --border-radius: 5px; /* Default border radius */
-  --border-color: #131111; /* Default border color */
-  --border-light: #ffffff;
-}
-
-/* Shadows */
-:root {
+  /* Borders & Shadows */
+  --border-radius: 6px;
+  --border-color: #ddd;
   --box-shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1);
   --box-shadow-medium: 0 4px 8px rgba(0, 0, 0, 0.2);
   --box-shadow-dark: 0 6px 12px rgba(0, 0, 0, 0.3);
+
+  /* Typography */
+  --font-family: "Inter", sans-serif;
+  --font-size-base: 16px;
+  --font-size-large: 18px;
+  --font-size-small: 14px;
+  --font-size-xxl: 24px;
+  --font-size-xxxl: 44px;
+
+  /* Font Weights */
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-small: 8px;
+  --spacing-medium: 16px;
+  --spacing-large: 24px;
+  --spacing-xl: 32px;
+}
+
+/* Dark Mode */
+[data-theme="dark"] {
+  --background-color: var(--background-dark);
+  --text-color: var(--text-light);
+  --text-secondary-color: #a0a0a0;
+  --border-color: #333;
 }

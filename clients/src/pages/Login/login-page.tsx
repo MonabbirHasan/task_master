@@ -13,7 +13,7 @@ import {
   Visibility,
   VisibilityOff,
 } from "@mui/icons-material";
-import HomePage from "../Home/Home";
+import HomePage from "../Home/Home-page";
 
 const Login: React.FC = () => {
   const [password, setPassword] = useState<string>("");

@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ForgotPassword from "../pages/Forgot Password/forgot-password";
 import TaskList from "../pages/Task List/task-list";
 import ChangePassword from "../pages/Change Password/change-password";
- import Messages from "../pages/Messages/Messages";
+import Messages from "../pages/Messages/Messages";
 import PostTask from "../pages/post_tasks/post-task";
 import PaymentHistory from "../pages/dashboard_page/Payment History/payment-history";
 import PaymentMethods from "../pages/PaymentMethods/payment-methods";
@@ -29,7 +29,8 @@ import {
   FavoritePage,
   ProfileLayouts,
   BlogDetails,
-  HomePage,NotificationPage
+  HomePage,
+  NotificationPage,
 } from "../pages/page";
 
 const AppRoutes = () => (

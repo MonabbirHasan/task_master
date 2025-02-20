@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import Header from "../../components/layouts/Header/Header";
-import Footer from "../../components/layouts/Footer/Footer";
 import "./services_page.css";
 import { Col, Container, Row } from "react-bootstrap";
 import ServiceFilter from "../../components/data_filter/ServiceFilter";
 import GigCard from "../../components/gig_card/GigCard";
+import Layout from "../../components/layouts/Layout";
 const services_data = [
   {
     id: 1,
@@ -162,44 +161,55 @@ const ServicesPage = () => {
   const [filteredServices, setFilteredServices] =
     useState<any[]>(services_data);
   return (
-    <div className="service_page">
-      <Header />
-      <Container fluid>
-        <div className="service_page_wrapper">
-          <div className="service_filter">
-            {/* <ServiceFilter data={services_data} results={setFilteredServices} /> */}
-          </div>
-          {/* service listing */}
-          <div className="service_listing">
-            <Row lg={4}>
-              {filteredServices.map((service, index) => (
-                <GigCard
-                  title={""}
-                  category={""}
-                  hourlyRate={""}
-                  availability={""}
-                  warranty={""}
-                  tags={""}
-                  description={""}
-                  image={""}
-                  onClick={function (): void {
-                    throw new Error("Function not implemented.");
-                  }}
-                  skills={""}
-                  clientReviews={[]}
-                  estimatedCompletionTime={""}
-                  location={""}
-                  priceRange={""}
-                  deliveryMethod={""}
-                  extraServices={[]}
-                />
-              ))}
+    <Layout>
+      <div className="service_page">
+        <Container fluid>
+          <div className="service_page_wrapper">
+            <Row>
+              <Col lg={3}>
+                <div className=" ">
+                  <ServiceFilter
+                    data={services_data}
+                    results={setFilteredServices}
+                  />
+                </div>
+              </Col>
+              <Col>
+                {/* service listing */}
+                <div className="service_listing">
+                  <Row lg={3}>
+                    {filteredServices.map((service, index) => (
+                      <Col>
+                        <GigCard
+                          title={service.title}
+                          category={""}
+                          hourlyRate={""}
+                          availability={""}
+                          warranty={""}
+                          tags={""}
+                          description={""}
+                          image={""}
+                          onClick={function (): void {
+                            throw new Error("Function not implemented.");
+                          }}
+                          skills={""}
+                          clientReviews={[]}
+                          estimatedCompletionTime={""}
+                          location={""}
+                          priceRange={""}
+                          deliveryMethod={""}
+                          extraServices={[]}
+                        />
+                      </Col>
+                    ))}
+                  </Row>
+                </div>
+              </Col>
             </Row>
           </div>
-        </div>
-      </Container>
-      <Footer />
-    </div>
+        </Container>
+      </div>
+    </Layout>
   );
 };
 

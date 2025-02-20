@@ -5,8 +5,7 @@
   overflow: hidden;
   margin-bottom: 20px;
   transition: transform 0.3s ease;
-  cursor: pointer;
-  border: 1px solid var(--secondary-color);
+  border: 1px solid var(--primary-color);
   border-left-color: var(--primary-color);
   border-left-width: 3px;
   box-sizing: border-box;
@@ -57,6 +56,10 @@
   color: black;
   margin: 0;
   padding: 0;
+  cursor: pointer;
+}
+.task_card_header .task_card_header-title h6:hover {
+  color: var(--primary-color);
 }
 /* task_card_header-author */
 .task_card_header .task_card_header-author {
@@ -143,9 +146,8 @@
 /* task_card_footer_status */
 .task_card .task_card_footer .task_card_footer_status {
   text-transform: capitalize;
-  font-weight: 600;
   font-size: 14px;
-  color: black;
+  color: white;
 }
 /* task_card_footer-action */
 .task_card .task_card_footer .task_card_footer-action {

@@ -1,16 +1,17 @@
 .footer {
-  background: var(--gray-dark);
-  color: var(--text-color);
+  background: var(--primary-color);
+  color: var(--text-light);
 }
 
 .footer h4 {
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 15px;
+  color: var(--text-light);
 }
 .footer .logo-brand {
-  font-size: 20px;
-  color: var(--text-color);
+  font-size: var(--font-size-xxl);
+  color: var(--text-light);
 }
 
 .footer ul {
@@ -23,23 +24,18 @@
 }
 
 .footer ul li a {
-  color: #bbb;
+  color: var(--text-light);
   text-decoration: none;
-  transition: color 0.3s;
+  transition: padding 0.3s;
 }
 
 .footer ul li a:hover {
-  color: #ff6347;
+  padding-left: 10px;
 }
 
 .footer .social-icons {
   display: flex;
   gap: 15px;
-}
-
-.footer .social-icons li a {
-  font-size: 22px;
-  color: #bbb;
 }
 
 .footer .social-icons li a:hover {
@@ -79,13 +75,14 @@
   border-radius: 10px;
   transition: 0.5s;
   height: 100px;
-  background: #444;
+  background: var(--secondary-color);
   transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
 }
 
 .social-icons .social-icon {
   color: var(--text-color);
   font-size: 24px;
+  color: white;
 }
 
 .social-icons a:hover {

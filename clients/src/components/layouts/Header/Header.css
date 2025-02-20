@@ -1,73 +1,112 @@
 header {
-  background: linear-gradient(
-    to right,
-    var(--primary-color),
-    var(--secondary-color)
-  );
-  box-shadow: var(--box-shadow-light);
+  background: var(--primary-color);
+  padding: 0px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: background 0.3s ease-in-out;
 }
-header .brand_log {
+
+/* Logo */
+header .brand_logo {
   text-transform: capitalize;
-  color: var(--text-color);
+  color: var(--text-light);
   text-decoration: none;
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-xxl);
-  font-family: cursive;
-  letter-spacing: 1px;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 1.2px;
+  transition: color 0.3s ease-in-out;
 }
-.header_menu.post_task {
-  background-color: var(--background-color);
-  color: var(--black);
-  border-radius: 4px;
-  padding: 2px 10px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  animation: ctaVibrate 0.4s ease-in-out infinite;
-}
-/* @keyframes ctaVibrate {
-  0% {
-    transform: translateX(0);
-  }
-  20% {
-    transform: translateX(-2px);
-  }
-  40% {
-    transform: translateX(2px);
-  }
-  60% {
-    transform: translateX(-2px);
-  }
-  80% {
-    transform: translateX(2px);
-  }
-  100% {
-    transform: translateX(0);
-  }
-} */
 
-header .header_menu.post_task:hover {
-  color: black;
-  animation: forwards;
+header .brand_logo:hover {
+  color: var(--text-light);
 }
+
+/* Menu Items */
 header .header_menu {
   text-decoration: none;
   text-transform: capitalize;
-  color: var(--text-color);
+  color: var(--text-light);
   font-size: var(--font-size-medium);
   font-weight: var(--font-weight-600);
-  transition: 0.5s;
-  padding: 0 10px;
+  transition: 0.3s ease-in-out;
+  padding: 5px;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   border-bottom: 3px solid transparent;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative;
 }
 
 header .header_menu:hover {
-  border-bottom: 3px solid var(--text-color);
-  color: var(--text-color);
+  border-bottom: 3px solid var(--white);
+  color: var(--white);
+}
+
+/* Post Task Button */
+.header_menu.post_task {
+  background-color: var(--secondary-color);
+  color: var(--white);
+  border-radius: 6px;
+  /* padding: 10px 15px; */
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-small);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: var(--box-shadow-dark);
+  position: relative;
+  animation: glowEffect 1.5s infinite alternate ease-in-out;
+}
+
+/* Button Hover */
+header .header_menu.post_task:hover {
+  background-color: var(--background-color);
+  color: var(--black);
+  transform: scale(1.05);
+  border: none;
+}
+
+/* Call-to-Action Animation */
+@keyframes glowEffect {
+  from {
+    box-shadow: 0 0 10px var(--primary-color);
+  }
+  to {
+    box-shadow: 0 0 20px var(--secondary-color);
+  }
+}
+
+/* Responsive Menu */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+  }
+
+  header .header_menu {
+    padding: 8px;
+  }
+
+  .header_menu.post_task {
+    padding: 8px 14px;
+  }
+}
+
+/* Dark Mode Compatibility */
+[data-theme="dark"] header {
+  background: linear-gradient(
+    to right,
+    var(--background-dark),
+    var(--primary-hover)
+  );
+  box-shadow: var(--box-shadow-dark);
+}
+
+[data-theme="dark"] header .brand_logo,
+[data-theme="dark"] header .header_menu {
+  color: var(--text-light);
+}
+
+[data-theme="dark"] header .header_menu:hover {
+  border-bottom: 3px solid var(--success-color);
 }

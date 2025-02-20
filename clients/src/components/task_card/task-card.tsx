@@ -17,9 +17,12 @@ import {
   CalendarMonth,
   Favorite,
   FavoriteBorder,
+  ImportContacts,
   LocationOn,
+  LowPriority,
   Message,
   MoreVert,
+  PriorityHigh,
   Star,
   StarBorder,
   StarHalf,
@@ -216,9 +219,9 @@ const TaskCard: React.FC<TaskCardProps> = ({
         </Stack>
         <Stack direction="row" spacing={1}>
           <span>
-            <WarrantyIcon />
+            <LowPriority fontSize="small" htmlColor="gray"/>
           </span>
-          <span>full warranty</span>
+          <span>Priority - High</span>
         </Stack>
         <Stack direction="row" spacing={1} py={1}>
           <span>
@@ -250,8 +253,9 @@ const TaskCard: React.FC<TaskCardProps> = ({
         <span className="task_card_footer_status">
           <Chip
             size="small"
+            className="task_status_badge"
             style={{
-              color: "var(--text-color)",
+              color: "var(--text-light)",
               background:
                 status == "open"
                   ? "var(--primary-color)"

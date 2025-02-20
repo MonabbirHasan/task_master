@@ -4,7 +4,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import { Avatar, Rating, Stack } from "@mui/material";
 import { Verified } from "@mui/icons-material";
 import Header from "../../../components/layouts/Header/Header";
-import ServiceCard from "../../../components/gig_card/ServiceCard";
+// import ServiceCard from "../../../components/gig_card/ServiceCard";
 const services_data = [
   {
     id: 1,
@@ -146,7 +146,7 @@ const ProfileViewPage = () => {
                     <Row lg={3}>
                       {services_data.map((service, index) => (
                         <Col>
-                          <ServiceCard
+                          {/* <ServiceCard
                             edit={false}
                             availability={service.availability}
                             category={service.category}
@@ -157,7 +157,7 @@ const ProfileViewPage = () => {
                             title={service.title}
                             warranty={service.warranty}
                             key={index}
-                          />
+                          /> */}
                         </Col>
                       ))}
                     </Row>

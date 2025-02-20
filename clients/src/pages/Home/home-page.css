@@ -1,100 +1,55 @@
-/* Styles for HomePage */
+.home_page {
+  padding: 10px 0;
+}
 
-body {
-    font-family: "Roboto, sans-serif";
-  }
-  
-  .rev-slider {
-    padding: 2rem;
-    background-color: #e9ecef;
-    text-align: center;
-  }
-  
-  .rev-slider .slider-title {
-    margin-bottom: 1rem;
-  }
-  
-  .search-bar {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    margin-top: 1rem;
-  }
-  
-  .search-bar .search-field {
-    flex: 2;
-  }
-  
-  .search-bar .location-field {
-    flex: 1;
-  }
-  
-  .search-bar .location-icon {
-    color: #aaa;
-  }
-  
-  .search-bar .search-button {
-    flex: 0.5;
-  }
-  
-  .section {
-    padding: 2rem 1rem;
-    background-color: #fff;
-  }
-  
-  .section .section-title {
-    text-align: center;
-    margin-bottom: 1.5rem;
-  }
-  
-  .card-container {
-    justify-content: center;
-  }
-  
-  .category-card {
-    text-align: center;
-    padding: 1rem;
-  }
-  
-  .icon-card {
-    text-align: center;
-    padding: 1rem;
-  }
-  
-  .icon-card .icon-card-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .category-icon {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .cta-section {
-    text-align: center;
-    padding: 2rem;
-    background-color: #f1f3f5;
-  }
-  
-  .cta-section .cta-button {
-    margin: 0.5rem;
-  }
-  
-  .listing-card {
-    text-align: center;
-    padding: 1rem;
-  }
-  
-  .footer {
-    text-align: center;
-    padding: 1rem;
-    background-color: #343a40;
-    color: #fff;
-  }
-  
-  .footer .footer-text {
-    font-size: 0.875rem;
-  }
-  
+.call_to_action_button {
+  padding: 50px 0;
+}
+.cta-section {
+  background-color: var(--background-color);
+  text-align: center;
+}
+
+.cta-card {
+  background: var(--background-color);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: var(--box-shadow-light);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-color: var(--primary-color) !important;
+}
+
+.cta-card:hover {
+  transform: scale(1.02);
+  box-shadow: var(--box-shadow-medium);
+}
+
+.cta-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--primary-color) !important;
+  margin-bottom: 15px;
+}
+
+.cta-description {
+  font-size: 1.2rem;
+  color: var(--primary-color) !important;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.cta-buttons .cta-btn {
+  padding: 12px 25px;
+  font-size: 1rem;
+  border-radius: 30px;
+  margin: 10px;
+  text-transform: capitalize;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.cta-buttons .cta-btn:hover {
+  transform: translateY(-2px);
+  background-color: var(--secondary-color);
+  color: white;
+  border-color: white;
+}

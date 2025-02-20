@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Button, Stack, TextField, MenuItem } from "@mui/material";
+import ButtonComponent from "../Buttons/ButtonComponent";
 
 // Service Data Interface
 interface ServiceData {
@@ -49,8 +50,9 @@ const ServiceFilter: React.FC<FilterProps> = ({ data, results }) => {
   };
 
   return (
-    <div style={{ marginBottom: "20px" }}>
-      <Stack direction="row" spacing={2} justifyContent="start">
+    <div className="filter_box">
+      <h2 className="mb-3 task_filter_title">Filter</h2>
+      <Stack direction="column" spacing={2} justifyContent="start">
         {/* Category Filter */}
         <TextField
           fullWidth
@@ -130,14 +132,18 @@ const ServiceFilter: React.FC<FilterProps> = ({ data, results }) => {
         </TextField>
 
         {/* Apply Button */}
-        <Button
-          fullWidth
+        <ButtonComponent
           onClick={applyFilter}
-          variant="contained"
-          size="small"
-        >
-          Apply
-        </Button>
+          style={{
+            background: "var(--primary-color)",
+            color: "var(--text-light)",
+            textTransform: "capitalize",
+          }}
+          btn_label={"apply filter"}
+          variant={undefined}
+          size="medium"
+          color={undefined}
+        />
       </Stack>
     </div>
   );

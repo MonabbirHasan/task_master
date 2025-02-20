@@ -178,9 +178,11 @@ const Header: React.FC = () => {
       <Navbar expand="lg">
         <Container fluid>
           <Navbar.Brand>
-            <NavLink to="/" className="brand_log">
-              Task Master
-            </NavLink>
+            <h1 className="brand_logo">
+              <NavLink to="/" className="brand_logo">
+                Task Master
+              </NavLink>
+            </h1>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           {/* HEDER COUNTRY SELECTION */}
@@ -240,20 +242,22 @@ const Header: React.FC = () => {
                 navigate("/notifications");
               }}
             >
-              <Notifications
-                fontSize="medium"
-                htmlColor="var(--text-color)"
-              />
+              <Notifications fontSize="medium" htmlColor="var(--text-light)" />
             </IconButton>
             <IconButton
               onClick={() => {
                 navigate("/chat");
               }}
             >
-              <Chat fontSize="medium" htmlColor="white" />
+              <Chat fontSize="medium" htmlColor="var(--text-light)" />
             </IconButton>
             <IconButton onClick={handleProfileClick}>
-              <Avatar sx={{ backgroundColor: "white", color: "black" }}>
+              <Avatar
+                sx={{
+                  backgroundColor: "var(--background-color)",
+                  color: "var(--text-dark)",
+                }}
+              >
                 H
               </Avatar>
             </IconButton>

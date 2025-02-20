@@ -14,7 +14,6 @@ import "./favorite_page.css";
 import { NavLink } from "react-router-dom";
 import { Col, Container, Row } from "react-bootstrap";
 import TaskCard from "../../../components/task_card/task-card";
-import ServiceCard from "../../../components/gig_card/ServiceCard";
 import TaskFilter from "../../../components/data_filter/TaskFilter";
 import TaskDetails from "../../../components/task_details/task-details";
 import PageTitle from "../../../components/page_title/PageTitle";

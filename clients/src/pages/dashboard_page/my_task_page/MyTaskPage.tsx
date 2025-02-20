@@ -1,11 +1,19 @@
 import React, { useState } from "react";
 import TaskFilter from "../../../components/data_filter/TaskFilter";
-import MyTaskCard from "../../../components/task_card/my-task-card";
 import PageTitle from "../../../components/page_title/PageTitle";
-import TaskCard from "../../../components/task_card/task-card";
 import { motion, AnimatePresence } from "framer-motion";
-import { Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Row, Table } from "react-bootstrap";
 import "./my_task_page.css";
+import { IconButton, Stack } from "@mui/material";
+import {
+  Apps,
+  ArrowLeft,
+  ArrowRight,
+  Sort,
+  ViewList,
+} from "@mui/icons-material";
+import ListingManageCard from "../../../components/listing_manage/ListingManageCard";
+import ListingManageTable from "../../../components/listing_manage/ListingManageTable";
 const taskData = [
   {
     title: "Web Development Task and my own website maintained",
@@ -106,55 +114,157 @@ const taskData = [
 ];
 const MyTaskPage = () => {
   const [filteredTasks, setFilteredTasks] = useState(taskData);
+  const [layout_style, setLayoutStyle] = useState("table");
+  const [FilterOpen, setFilterOpen] = useState(true);
   return (
     <div className="my_task_page">
       <Container fluid>
-        <PageTitle title="my tasks" subtitle="" />
-        <Row>
-          <Col xs={12} md={5} lg={4}>
-            <TaskFilter data={taskData} results={setFilteredTasks} />
-          </Col>
-          <Col xs={12} md={7} lg={8}>
-            {filteredTasks.map((items, index) => (
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={
-                    index ||
-                    items.price ||
-                    items.location ||
-                    items.status ||
-                    items.flexible
-                  }
-                  initial={{ opacity: 0, y: 50 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -50 }}
-                  transition={{ duration: 0.5, ease: "easeInOut" }}
-                  className="w-full"
-                >
-                  <MyTaskCard
-                    title={items.title}
-                    category={"cleaning"}
-                    location={items.location}
-                    budget={items.price}
-                    date={items.date}
-                    view_btn={function (): void {
-                      alert("view");
-                    }}
-                    edit_btn={function (): void {
-                      alert("edit");
-                    }}
-                    delete_btn={function (): void {
-                      alert("delete");
-                    }}
-                  />
-                </motion.div>
-              </AnimatePresence>
-            ))}
-          </Col>
-        </Row>
+        <div className="pb-3">
+          <PageTitle title="my tasks" subtitle="" />
+        </div>
+
+        {/* MY TASKS LAYOUT AND FILTER ACTIONS */}
+        <div className="my_task_action pb-3">
+          <Stack direction="row" justifyContent="" spacing={2}>
+            <IconButton
+              onClick={() => {
+                FilterOpen == false
+                  ? setFilterOpen(true)
+                  : setFilterOpen(false);
+              }}
+            >
+              <Sort htmlColor="var(--primary-color)" />
+            </IconButton>
+            <IconButton
+              onClick={() => {
+                layout_style == "table"
+                  ? setLayoutStyle("card")
+                  : setLayoutStyle("table");
+              }}
+            >
+              {layout_style == "card" ? (
+                <Apps htmlColor="var(--primary-color)" />
+              ) : (
+                <ViewList htmlColor="var(--primary-color)" />
+              )}
+            </IconButton>
+          </Stack>
+        </div>
+
+        {/* MY TASK LISTING DISPLAY SECTION */}
+        <section className="my_tasks_listing">
+          <Row>
+            {FilterOpen == true && (
+              <Col xs={12} md={5} lg={3}>
+                <TaskFilter data={taskData} results={setFilteredTasks} />
+              </Col>
+            )}
+
+            <Col xs={12} md={7} lg={FilterOpen == true ? 9 : 12}>
+              {layout_style == "table" ? (
+                <Table style={styles.table}>
+                  <thead>
+                    <tr>
+                      <th style={styles.th}>Title</th>
+                      <th style={styles.th}>Type</th>
+                      <th style={styles.th}>Category</th>
+                      <th style={styles.th}>Status</th>
+                      <th style={styles.th}>Created Date</th>
+                      <th style={styles.th}>Action</th>
+                    </tr>
+                  </thead>
+                  {filteredTasks.map((items, index) => (
+                    <ListingManageTable
+                      id={0}
+                      card_type={"card"}
+                      type={"gig"}
+                      title={"I will design a professional logo"}
+                      category={"Graphic Design"}
+                      status={"completed"}
+                      price={300}
+                      onEdit={function (): void {
+                        throw new Error("Function not implemented.");
+                      }}
+                      onDelete={() => {}}
+                      onPreview={function (): void {
+                        throw new Error("Function not implemented.");
+                      }}
+                    />
+                  ))}
+                  {/* MY TASK PAGINATION */}
+                  <IconButton>
+                    <ArrowLeft />
+                  </IconButton>
+                  <IconButton>
+                    <ArrowRight />
+                  </IconButton>
+                </Table>
+              ) : (
+                <Row>
+                  {filteredTasks.map((items, index) => (
+                    <Col xs={12} md={5} lg={4}>
+                      <AnimatePresence mode="wait">
+                        <motion.div
+                          key={
+                            index ||
+                            items.price ||
+                            items.location ||
+                            items.status ||
+                            items.flexible
+                          }
+                          initial={{ opacity: 0, y: 50 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -50 }}
+                          transition={{ duration: 0.5, ease: "easeInOut" }}
+                          className="w-full"
+                        >
+                          <ListingManageCard
+                            id={0}
+                            card_type={"card"}
+                            type={"gig"}
+                            title={"I will design a professional logo"}
+                            category={"Graphic Design"}
+                            status={"completed"}
+                            price={300}
+                            onEdit={function (): void {
+                              throw new Error("Function not implemented.");
+                            }}
+                            onDelete={() => {}}
+                            onPreview={function (): void {
+                              throw new Error("Function not implemented.");
+                            }}
+                          />
+                        </motion.div>
+                      </AnimatePresence>
+                    </Col>
+                  ))}
+                </Row>
+              )}
+            </Col>
+          </Row>
+        </section>
       </Container>
     </div>
   );
 };
-
+const styles: { [key: string]: React.CSSProperties } = {
+  table: {
+    width: "100%",
+    borderCollapse: "collapse",
+    fontFamily: "Arial, sans-serif",
+    backgroundColor: "#fff",
+    boxShadow: "0 2px 10px rgba(0, 0, 0, 0.1)",
+    borderRadius: 5,
+    borderTopRightRadius: 10,
+    borderTopLeftRadius: 10,
+  },
+  th: {
+    padding: "12px 15px",
+    textAlign: "left",
+    fontWeight: "var(--font-weight-medium)",
+    fontSize: "14px",
+    borderBottom: "2px solid #f4f4f4",
+    color: "#555",
+  },
+};
 export default MyTaskPage;

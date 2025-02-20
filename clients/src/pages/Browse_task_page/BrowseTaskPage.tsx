@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import TaskFilter from "../../components/data_filter/TaskFilter";
 import TaskCard from "../../components/task_card/task-card";
-import Header from "../../components/layouts/Header/Header";
-import Footer from "../../components/layouts/Footer/Footer";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import "./browse_task_page.css";
 import { FormControl } from "@mui/material";
 import { motion, AnimatePresence } from "framer-motion";
+import Layout from "../../components/layouts/Layout";
 const taskData = [
   {
     title:
@@ -53,8 +52,7 @@ const BrowseTaskPage = () => {
   const [filteredTasks, setFilteredTasks] = useState(taskData);
 
   return (
-    <>
-      <Header />
+    <Layout>
       <div className="browse_task_page">
         <Container fluid>
           {/* Main Content */}
@@ -121,11 +119,8 @@ const BrowseTaskPage = () => {
             </div>
           </div>
         </Container>
-
-        {/* Footer */}
-        <Footer />
       </div>
-    </>
+    </Layout>
   );
 };
 // const styles: { [key: string]: React.CSSProperties } = {

@@ -12,7 +12,7 @@ import {
 import Layout from "../../components/layouts/Layout";
 import PageTitle from "../../components/page_title/PageTitle";
 import { Button, IconButton, Typography } from "@mui/material";
-
+import "./notification_page.css";
 // Dummy Notification Data
 const notifications = [
   {

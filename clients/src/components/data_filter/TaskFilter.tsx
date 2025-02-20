@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import {
-  Button,
   Stack,
   TextField,
   MenuItem,
@@ -8,6 +7,7 @@ import {
   FormControlLabel,
 } from "@mui/material";
 import "./task-filter.css";
+import ButtonComponent from "../Buttons/ButtonComponent";
 // Task Data Interface
 interface TaskData {
   title: string;
@@ -66,16 +66,7 @@ const TaskFilter: React.FC<FilterProps> = ({ data, results }) => {
   };
 
   return (
-    <div
-      style={{
-        marginBottom: "20px",
-        background: "var(--background-color)",
-        boxShadow: "var(--box-shadow-light)",
-        padding: 20,
-        borderRadius: 10,
-        border: "1px solid white",
-      }}
-    >
+    <div className="filter_box">
       <h2 className="mb-3 task_filter_title">Filter</h2>
       {/* Location Filter */}
       <Stack direction="column" spacing={2}>
@@ -154,18 +145,18 @@ const TaskFilter: React.FC<FilterProps> = ({ data, results }) => {
         </TextField>
 
         {/* Apply Button */}
-        <Button
-          fullWidth
+        <ButtonComponent
           onClick={applyFilter}
-          variant="contained"
-          size="small"
           style={{
-            background: "var(--secondary-color)",
+            background: "var(--primary-color)",
+            color: "var(--text-light)",
             textTransform: "capitalize",
           }}
-        >
-          Apply
-        </Button>
+          btn_label={"apply filter"}
+          variant={undefined}
+          size="medium"
+          color={undefined}
+        />
       </Stack>
     </div>
   );

@@ -4,7 +4,7 @@ import PartOfDaySelector from "../../components/post_task_component/PartOfDaySel
 import LocationSelector from "../../components/post_task_component/LocationSelector";
 import DateRangePicker from "../../components/post_task_component/DateRangePicker";
 import ImageUploader from "../../components/post_task_component/ImageUpoader";
-import ButtonComponent from "../../components/Buttons/Button";
+import ButtonComponent from "../../components/Buttons/ButtonComponent";
 import { Col, Container, Form, Row } from "react-bootstrap";
 import { motion, AnimatePresence } from "framer-motion";
 import Layout from "../../components/layouts/Layout";
@@ -533,6 +533,7 @@ const PostTask = () => {
                   <Box width={500} gap={3} mt={2} display="flex">
                     <ButtonComponent
                       onClick={StepControlPrev}
+                      style={{ background: "var(--error-color)" }}
                       size="small"
                       color="success"
                       variant="contained"
@@ -547,7 +548,7 @@ const PostTask = () => {
                     <ButtonComponent
                       onClick={StepControlNext}
                       size="small"
-                      color="primary"
+                      style={{ background: "var(--primary-color)" }}
                       variant="contained"
                       btn_label={
                         InitialState == 6 ? (
@@ -577,6 +578,7 @@ const PostTask = () => {
                           </div>
                         )
                       }
+                      color={undefined}
                     />
                   </Box>
                 </div>
