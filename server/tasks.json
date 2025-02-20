@@ -1,0 +1,38 @@
+{
+    "task_title": "Need a plumber for a leaking pipe",
+    "task_category": "Plumbing",
+    "task_description": "I need a professional plumber to fix a leaking pipe in my kitchen. The task includes replacing the damaged pipe section.",
+    "price_cost": "$100",
+    "deadline": "Within 2 days",
+    "task_requirements": "Please bring your own tools and gloves.",
+    "task_image_video": "URL or file path for images/videos related to the task (e.g., broken pipe image)",
+    "tags_keywords": ["Plumbing", "Leak repair", "Kitchen maintenance"],
+    "task_status": "Open",
+    "task_location": "123 Main St, City, USA",
+    "task_priority": "High",
+    "task_duration_estimate": "2 hours",
+    "task_assigned_to": "User ID of the worker or 'Not assigned'",
+    "special_instructions": "Please wear safety gear and handle with care.",
+    "task_faq": [
+      {
+        "question": "Do you provide tools?",
+        "answer": "No, please bring your own tools."
+      }
+    ],
+    "task_reviews": [
+      {
+        "review": "Great plumber, fixed the leak in no time!",
+        "client_name": "Jane Smith",
+        "rating": 5
+      }
+    ],
+    "task_availability": "Available weekdays between 9 AM to 5 PM",
+    "task_language": ["English"],
+    "task_video_intro": "URL of a short video explaining the task or showing the issue.",
+    "refund_policy": "Refunds available within 7 days if not satisfied with the task.",
+    "task_terms_and_conditions": "Task must be completed within the agreed time frame. No refunds after work is completed.",
+    "task_type": "One-time",
+    "task_assigned_worker_availability": "Available for the task",
+    "task_recurrence": "None"
+  }
+  

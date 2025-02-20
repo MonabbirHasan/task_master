@@ -1,0 +1,48 @@
+{
+  "gig_title": "I will design a professional logo",
+  "gig_category": "Graphic Design",
+  "subcategory": "",
+  "gig_description": "A detailed description of what the gig entails, the services provided, and how the user can benefit from the gig.",
+  "price_cost": "$50",
+  "delivery_time": "3 days",
+  "gig_requirements": "Please provide your brand colors or Send me a brief description of your project",
+  "gig_image_video": "URL or file path for the image/video showcasing the gig",
+  "tags_keywords": ["Logo Design", "Business Branding"],
+  "extras_upgrades": [
+    {
+      "name": "Express delivery",
+      "price": "$20 extra"
+    },
+    {
+      "name": "Include 3 revisions",
+      "price": "$10 extra"
+    }
+  ],
+  "gig_faq": [
+    {
+      "question": "How many revisions do you provide?",
+      "answer": "I offer 2 revisions in the base price, with additional revisions available for $5 each."
+    }
+  ],
+  "portfolio_samples_of_work": [
+    "image_url_or_link_1",
+    "image_url_or_link_2",
+    "link_to_previous_project"
+  ],
+  "availability": "Available for 10 hours per week",
+  "gig_language": ["English", "Spanish"],
+  "video_introduction": "URL_of_the_video_intro",
+  "refund_policy": "Refunds available within 7 days if not satisfied",
+  "gig_status": "Active",
+  "gig_location": "New York, USA",
+  "availability_for_custom_requests": true,
+  "social_proof": [
+    {
+      "review": "Great logo designer, very professional!",
+      "client_name": "John Doe",
+      "rating": 5
+    }
+  ],
+  "gig_terms_and_conditions": "No refunds for digital products after delivery.",
+  "seller_experience_level": "Expert"
+}
