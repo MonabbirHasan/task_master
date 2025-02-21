@@ -6,6 +6,7 @@ import "./browse_task_page.css";
 import { FormControl } from "@mui/material";
 import { motion, AnimatePresence } from "framer-motion";
 import Layout from "../../components/layouts/Layout";
+import { useNavigate } from "react-router-dom";
 const taskData = [
   {
     title:
@@ -50,7 +51,7 @@ const taskData = [
 
 const BrowseTaskPage = () => {
   const [filteredTasks, setFilteredTasks] = useState(taskData);
-
+  const navigation = useNavigate();
   return (
     <Layout>
       <div className="browse_task_page">
@@ -82,6 +83,7 @@ const BrowseTaskPage = () => {
                         className="w-full"
                       >
                         <TaskCard
+                          onClick={() => navigation("/task-detail")}
                           title={items.title}
                           price={items.price}
                           location={items.location}

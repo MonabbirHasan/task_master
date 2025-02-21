@@ -106,7 +106,7 @@ const GigCard = ({
             <Button size="small" className="gig_action_btn">
               make offer
             </Button>
-            <Button size="small" className="gig_action_btn">
+            <Button onClick={onClick} size="small" className="gig_action_btn">
               view service
             </Button>
           </div>

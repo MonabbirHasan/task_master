@@ -51,12 +51,13 @@
   flex-basis: 85%;
 }
 .task_card_header .task_card_header-title h6 {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
   color: black;
   margin: 0;
   padding: 0;
   cursor: pointer;
+  text-transform: capitalize;
 }
 .task_card_header .task_card_header-title h6:hover {
   color: var(--primary-color);

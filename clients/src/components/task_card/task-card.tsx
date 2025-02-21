@@ -43,6 +43,7 @@ type TaskCardProps = {
   card_type: string;
   favorit_btn: () => void;
   message_btn: () => void;
+  onClick: () => void;
 };
 
 const TaskCard: React.FC<TaskCardProps> = ({
@@ -57,6 +58,7 @@ const TaskCard: React.FC<TaskCardProps> = ({
   card_type,
   favorit_btn,
   message_btn,
+  onClick,
 }) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -125,59 +127,13 @@ const TaskCard: React.FC<TaskCardProps> = ({
       //   alert(title);
       // }}
     >
-      {/* <div className="favorit_card"></div>
-      <div className="my_task_card"></div>
-      <div className="tasks_card"></div> */}
-      {/* CARD TIMER */}
-      <Menu
-        id="basic-menu"
-        anchorEl={anchorEl}
-        open={open}
-        onClose={handleClose}
-        MenuListProps={{
-          "aria-labelledby": "basic-button",
-        }}
-      >
-        <MenuItem style={{ fontSize: 12 }} onClick={handleClose}>
-          Undo Favorite{" "}
-        </MenuItem>
-        <MenuItem style={{ fontSize: 12 }} onClick={handleClose}>
-          View Task
-        </MenuItem>
-      </Menu>
       <div className="task_card_timer pt-2">
         <Typography variant="body2">40 Minutes Ago, uploaded</Typography>
-        {card_type == "favorit" ? (
-          <IconButton
-            aria-controls={open ? "basic-menu" : undefined}
-            aria-haspopup="true"
-            aria-expanded={open ? "true" : undefined}
-            onClick={handleClick}
-          >
-            <MoreVert fontSize="small" />
-          </IconButton>
-        ) : card_type == "my_task" ? (
-          <IconButton
-            aria-controls={open ? "basic-menu" : undefined}
-            aria-haspopup="true"
-            aria-expanded={open ? "true" : undefined}
-            onClick={handleClick}
-          >
-            <MoreVert fontSize="small" />
-          </IconButton>
-        ) : (
-          <Typography></Typography>
-        )}
-        {/* {card_type == "my_task" && (
-          <IconButton>
-            <MoreVert fontSize="small" />
-          </IconButton>
-        )} */}
       </div>
 
       {/* CARD HEADER */}
       <div className="task_card_header">
-        <div className="task_card_header-title">
+        <div className="task_card_header-title" onClick={onClick}>
           <Typography variant="h6">{title}</Typography>
         </div>
         {/* CARD AUTHOR  */}
@@ -219,7 +175,7 @@ const TaskCard: React.FC<TaskCardProps> = ({
         </Stack>
         <Stack direction="row" spacing={1}>
           <span>
-            <LowPriority fontSize="small" htmlColor="gray"/>
+            <LowPriority fontSize="small" htmlColor="gray" />
           </span>
           <span>Priority - High</span>
         </Stack>
@@ -257,11 +213,11 @@ const TaskCard: React.FC<TaskCardProps> = ({
             style={{
               color: "var(--text-light)",
               background:
-                status == "open"
+                status.toLowerCase() == "open"
                   ? "var(--primary-color)"
-                  : status == "assigned"
+                  : status.toLowerCase() == "assigned"
                   ? "var(--secondary-color)"
-                  : status == "completed"
+                  : status.toLowerCase() == "completed"
                   ? "var(--success-color)"
                   : "var(--error-color)",
             }}

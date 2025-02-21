@@ -9,7 +9,6 @@ import PaymentHistory from "../pages/dashboard_page/Payment History/payment-hist
 import PaymentMethods from "../pages/PaymentMethods/payment-methods";
 
 import FeaturedTask from "../pages/Featured Tasks/featured-task";
-import TaskDetails from "../pages/Task Details/task-details";
 import SettingsPage from "../pages/Setting/setting-page";
 import HelpPage from "../pages/Help/help-page";
 import SupportPage from "../pages/Support/support-page";
@@ -31,6 +30,8 @@ import {
   BlogDetails,
   HomePage,
   NotificationPage,
+  TaskDetails,
+  ServiceDetails,
 } from "../pages/page";
 
 const AppRoutes = () => (
@@ -58,6 +59,7 @@ const AppRoutes = () => (
       {/* <Route path="/favourite-tasks" element={<FavouriteTask />} /> */}
       <Route path="/featured-tasks" element={<FeaturedTask />} />
       <Route path="/services" element={<ServicesPage />} />
+      <Route path="/service_details" element={<ServiceDetails />} />
       <Route path="/profile/view" element={<ProfileViewPage />} />
       {/* <Route path="/profile" element={<ProfilePage />} /> */}
       {/* 

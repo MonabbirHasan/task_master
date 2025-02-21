@@ -4,6 +4,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import ServiceFilter from "../../components/data_filter/ServiceFilter";
 import GigCard from "../../components/gig_card/GigCard";
 import Layout from "../../components/layouts/Layout";
+import { useNavigate } from "react-router-dom";
 const services_data = [
   {
     id: 1,
@@ -160,6 +161,7 @@ const services_data = [
 const ServicesPage = () => {
   const [filteredServices, setFilteredServices] =
     useState<any[]>(services_data);
+  const navigate = useNavigate();
   return (
     <Layout>
       <div className="service_page">
@@ -190,7 +192,7 @@ const ServicesPage = () => {
                           description={""}
                           image={""}
                           onClick={function (): void {
-                            throw new Error("Function not implemented.");
+                            navigate("/service_details");
                           }}
                           skills={""}
                           clientReviews={[]}

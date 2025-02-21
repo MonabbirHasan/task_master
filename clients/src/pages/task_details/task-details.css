@@ -1,0 +1,139 @@
+.task_details_page {
+  padding: 40px 0;
+}
+.task_details_page_wrapper {
+  padding: 20px 0;
+}
+/* task_details_left */
+.task_details_left {
+  padding: 10px;
+}
+/* task_detail_header */
+.task_details_left .task_detail_header {
+  padding: 10px;
+}
+.task_detail_header .task_detail_title {
+  text-transform: capitalize;
+  font-size: var(--font-size-xxl);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-color);
+}
+.task_detail_header .task_detail_header_category {
+  padding: 0 0 10px 0;
+}
+.task_detail_header .task_detail_header_category_item {
+  font-size: var(--font-size-base);
+  text-transform: capitalize;
+}
+.task_detail_header .task_detail_header_category_item span:first-child {
+  color: var(--primary-color);
+  padding-right: 10px;
+}
+.task_detail_header .task_detail_header_category_item span:last-child {
+  background: var(--background-color);
+  border-radius: 10px;
+  color: var(--text-color);
+  padding: 5px;
+  text-transform: capitalize;
+}
+/* task_detail_banner */
+.task_details_left .task_detail_banner {
+  padding: 5px;
+}
+.task_details_left .task_detail_banner img {
+  width: 100%;
+  height: 250px;
+  border-radius: 10px;
+}
+/* task_detail_description */
+.task_details_left .task_detail_description {
+  padding: 10px;
+}
+.task_details_left .task_detail_description h2 {
+  padding: 10px 0;
+  text-transform: capitalize;
+  font-size: var(--font-size-xxl);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-color);
+}
+.task_details_left .task_detail_description p {
+  text-transform: capitalize;
+  font-size: var(--font-size-base);
+  color: var(--text-color);
+  font-weight: var(--font-weight-base);
+}
+/* task_detail_review */
+.task_details_left .task_detail_review {
+  padding: 40px 10px;
+  border-radius: 2px;
+}
+.task_details_left .task_detail_review .task_detail_review_title {
+  text-transform: capitalize;
+  color: var(--text-color);
+  font-size: var(--font-size-base);
+}
+/* task_detail_related_tasks */
+.task_detail_related_tasks {
+  padding: 30px 0;
+}
+.task_detail_related_tasks .task_detail_related_task_title {
+  text-transform: capitalize;
+  color: var(--text-color);
+  font-size: var(--font-size-base);
+}
+/* task_details_right */
+.task_details_page .task_details_right {
+  padding: 10px;
+}
+.task_details_page .task_details_right .task_detail_task_apply {
+  padding: 10px;
+  background-color: var(--background-color);
+  box-shadow: var(--box-shadow-light);
+  margin-bottom: 5px;
+  border-radius: 10px;
+  /* border: 1px solid var(---color); */
+}
+.task_details_right .task_detail_author_profile {
+  padding: 30px;
+  background-color: var(--background-color);
+  /* box-shadow: var(--box-shadow-light); */
+  border-radius: 10px;
+  border: 1px solid var(--text-light);
+}
+.task_detail_author_profile_head {
+  border-bottom: 1px solid var(--primary-color);
+  /* border-radius: 5px; */
+}
+.task_detail_author_profile_head .task_detail_author_name {
+  text-transform: capitalize;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-color);
+  text-align: center;
+  margin: 0;
+}
+.task_detail_author_profile_head .task_detail_author_joined {
+  text-transform: capitalize;
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-regular);
+  color: var(--text-color);
+  text-align: center;
+}
+/* task_detail_author_detail */
+.task_detail_author_detail {
+  padding: 10px 0;
+}
+.task_detail_author_detail .task_detail_author_detail_list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: capitalize;
+}
+
+.task_detail_author_detail_list_item span:first-child {
+  padding-right: 5px;
+}
+.task_detail_author_detail_list_item span:last-child {
+  font-size: var(--font-size-base);
+  color: var(--text-color);
+}

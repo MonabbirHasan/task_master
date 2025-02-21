@@ -1,0 +1,195 @@
+.service_details {
+  padding: 40px 0;
+}
+.service_details .service_details_left {
+  padding: 10px;
+}
+/* service_detais_head */
+.service_details_left .service_detais_head {
+  padding: 10px;
+}
+.service_details_left .service_detais_head h1 {
+  text-transform: capitalize;
+  font-size: var(--font-size-xxl);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-color);
+}
+/* service_detais_banner */
+.service_details_left .service_detais_banner {
+  padding: 10px 0;
+}
+.service_details_left .service_detais_banner .service_detais_banner_main {
+  width: 100%;
+  height: 270px;
+  border-radius: 10px;
+}
+.service_details_left .service_detais_banner .service_detais_banner_slider {
+  display: flex;
+  gap: 10px;
+  transition: 0.5s ease-in-out;
+  padding-top: 10px;
+}
+.service_details_left .service_detais_banner .service_detais_banner_item {
+  width: 120px;
+  height: auto;
+  border-radius: 6px;
+  filter: brightness(50%);
+  transition: 0.5s;
+}
+.service_details_left .service_detais_banner .service_detais_banner_item:hover {
+  filter: brightness(100%);
+  cursor: pointer;
+}
+/* service_detais_description */
+.service_detais_description {
+  padding: 10px 0;
+}
+.service_detais_description h2 {
+  padding: 10px 0;
+  text-transform: capitalize;
+  font-size: var(--font-size-xxl);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-color);
+}
+.service_detais_description p {
+  text-transform: capitalize;
+  font-size: var(--font-size-small);
+  color: var(--text-color);
+  font-weight: var(--font-weight-base);
+}
+/* service_detais_reviews */
+.service_details_left .service_detais_reviews {
+  padding: 20px 0;
+}
+.service_details_left .service_detais_reviews h3 {
+  padding: 10px 0;
+  text-transform: capitalize;
+  font-size: var(--font-size-xxl);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-color);
+}
+
+/* service_detais_related_gigs */
+.service_detais_related_gigs {
+  padding: 25px 0;
+}
+.service_detais_related_gigs h4 {
+  padding: 10px 0;
+  text-transform: capitalize;
+  font-size: var(--font-size-xxl);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-color);
+}
+.service_detais_related_gigs .service_card {
+  padding: 10px;
+  background-color: var(--background-color);
+  box-shadow: var(--box-shadow-light);
+  border: 1px solid var(--text-light);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.service_card .service_card_left {
+  padding: 5px;
+}
+.service_card .service_card_left img {
+  width: 120px;
+  height: 80px;
+  border-radius: 5px;
+}
+
+.service_card_right .service_card_right_title {
+  margin: 0;
+  font-size: var(--font-size-medium);
+  font-weight: var(--font-weight-medium);
+  color: var(--gray-dark);
+  text-transform: capitalize;
+  cursor: pointer;
+}
+.service_card_right .service_card_right_title:hover {
+  color: var(--primary-color);
+}
+.service_card_right .service_card_right_content {
+  margin: 0;
+  font-size: var(--font-size-small);
+  text-transform: capitalize;
+  color: var(--gray-dark);
+}
+.service_card_right .service_card_right_content span {
+  display: block;
+  background: var(--background-color);
+  padding: 2px;
+}
+
+/* service_detais_related_service */
+.service_details_left .service_detais_related_service {
+  padding: 25px 0;
+}
+.service_detais_related_service h4 {
+  padding: 10px 0;
+  text-transform: capitalize;
+  font-size: var(--font-size-xxl);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-color);
+}
+
+/* service_detais_right */
+.service_details .service_detais_right {
+  padding: 10px;
+}
+.service_detais_right .service_detais_author_profile {
+  padding: 30px;
+  background-color: var(--background-color);
+  /* box-shadow: var(--box-shadow-light); */
+  border-radius: 10px;
+  border: 1px solid var(--text-light);
+}
+.service_detais_author_profile .service_detais_author_img {
+  padding: 10px;
+}
+
+.service_detais_author_profile .service_detais_author_name {
+  text-transform: capitalize;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-color);
+  text-align: center;
+  margin: 0;
+}
+.service_detais_author_profile .service_detais_author_title {
+  text-transform: capitalize;
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-regular);
+  color: var(--text-color);
+  text-align: center;
+  margin: 0;
+}
+
+.service_detais_right .service_details_author_experience {
+  padding: 20px;
+  border: 1px solid var(--text-light);
+  margin-top: 10px;
+  background-color: var(--background-color);
+  border-radius: 10px;
+  /* box-shadow: var(--box-shadow-light); */
+}
+.service_detais_right .service_details_author_experience h5 {
+  padding: 10px 0;
+  text-transform: capitalize;
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-medium);
+  color: var(--gray-dark);
+}
+.service_details_author_experience .service_details_author_experience_list {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--gray-dark);
+}
+.service_details_author_experience .service_details_author_experience_list li {
+  list-style: none;
+  text-transform: capitalize;
+  font-size: var(--font-size-base);
+  color: var(--gray-dark);
+}
