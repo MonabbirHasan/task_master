@@ -1,0 +1,60 @@
+.account-settings-container {
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .account-settings-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    width: 100%;
+  }
+  
+  .button-group {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 15px;
+  }
+  
+  .save-btn {
+    background-color: #007bff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+  }
+  
+  .cancel-btn {
+    background-color: #6c757d;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+  }
+  
+  .deactivate-account {
+    margin-top: 30px;
+    padding: 20px;
+    background: #fff3f3;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  .deactivate-account h5 {
+    color: #dc3545;
+  }
+  
+  .deactivate-account p {
+    font-size: 14px;
+  }
+  
+  .deactivate-account button {
+    background-color: #dc3545;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+  }
+  

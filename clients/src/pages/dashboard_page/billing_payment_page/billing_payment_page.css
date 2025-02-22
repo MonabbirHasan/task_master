@@ -1,91 +1,159 @@
 /* Billing Payment Page Styles */
-.billing-container {
-    max-width: 800px;
-    margin: auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+.billing_payment_page {
+  background-color: f8f9fa;
+  padding: 30px 15px;
+}
+.payment_method_action button {
+  min-width: 150px;
+  padding: 10px 15px;
+}
+
+.billing-title {
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-medium);
+  margin-bottom: 20px;
+  display: none;
+}
+/* billing_payment_wallet */
+.billing_payment_wallet {
+  padding: 20px;
+  background-color: var(--background-color);
+  box-shadow: var(--box-shadow-light);
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  border: 1px solid var(--gray-light);
+}
+/* .billing_payment_method */
+.billing_payment_method {
+  padding: 20px;
+  background-color: var(--background-color);
+  box-shadow: var(--box-shadow-light);
+  border-radius: 10px;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  border: 1px solid var(--gray-light);
+}
+/* billing_tax_documents */
+.billing_tax_documents {
+  padding: 20px;
+  background-color: var(--background-color);
+  box-shadow: var(--box-shadow-light);
+  border-radius: 10px;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  border: 1px solid var(--gray-light);
+}
+.payment_method_action {
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+}
+/* billing_payment_history */
+.billing_payment_history {
+  padding: 20px;
+  background-color: var(--background-color);
+  box-shadow: var(--box-shadow-light);
+  border-radius: 10px;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  border: 1px solid var(--gray-light);
+}
+
+.billing_payment_history table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.billing_payment_history table th,
+.billing_payment_history table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid var(--gray-light);
+}
+.billing_payment_history table :first-child {
+  border-top-left-radius: 20px;
+}
+.billing_payment_history table :last-child {
+  border-top-right-radius: 20px;
+}
+.billing_payment_history table th {
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  font-weight: var(--font-weight-medium);
+}
+
+.billing_payment_history table tr:nth-child(even) {
+  background-color: var(--gray-lightest);
+}
+
+.billing_payment_history table tr:hover {
+  background-color: var(--gray-light);
+}
+
+.billing_payment_history table td {
+  color: var(--text-color);
+}
+
+.billing_payment_history .status-completed {
+  color: var(--success-color);
+  font-weight: var(--font-weight-medium);
+}
+
+.billing_payment_history .status-failed {
+  color: var(--error-color);
+  font-weight: var(--font-weight-medium);
+}
+
+.balance-label {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.balance-amount {
+  font-size: var(--font-size-xxl);
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.section-title {
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-medium);
+  margin-bottom: 10px;
+  color: var(--text-color);
+}
+
+.payment-method-list {
+  border-top: 1px solid var(--gray-light);
+  padding-top: 10px;
+}
+
+.payment-method {
+  border: 1px solid var(--gray-light);
+  border-radius: 5px;
+  background-color: var(--background-color);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+.billing_payment_history {
+  padding: 20px;
+  background-color: var(--background-color);
+  box-shadow: var(--box-shadow-light);
+  border-radius: 10px;
+  margin-bottom: 10px;
+  border: 1px solid var(--gray-light);
+}
+
+@media (max-width: 768px) {
+  .billing-container {
+    padding: 15px;
   }
-  
-  .billing-title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
-  .balance-label {
-    font-size: 16px;
-    font-weight: 600;
-    color: #333;
-  }
-  
+
   .balance-amount {
-    font-size: 24px;
-    font-weight: bold;
-    color: #28a745;
+    font-size: 20px;
   }
-  
-  .withdraw-btn {
-    background-color: #007bff;
-    color: white;
-    border-radius: 5px;
-  }
-  
-  .withdraw-btn:hover {
-    background-color: #0056b3;
-  }
-  
-  .section-title {
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 10px;
-  }
-  
-  .payment-method-list {
-    border-top: 1px solid #ddd;
-    padding-top: 10px;
-  }
-  
-  .payment-method {
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: white;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-  }
-  
-  .add-payment-btn {
-    background-color: #28a745;
-    color: white;
-    width: 100%;
-  }
-  
-  .add-payment-btn:hover {
-    background-color: #218838;
-  }
-  
-  .text-success {
-    color: var(--primary-color) !important;
-  }
-  
-  .text-danger {
-    color: #dc3545 !important;
-  }
-  
-  .table th, .table td {
-    padding: 12px;
-    text-align: left;
-  }
-  
-  @media (max-width: 768px) {
-    .billing-container {
-      padding: 15px;
-    }
-  
-    .balance-amount {
-      font-size: 20px;
-    }
-  }
+}

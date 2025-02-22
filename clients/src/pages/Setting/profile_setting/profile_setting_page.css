@@ -1,0 +1,54 @@
+.profile-settings-container {
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.profile-settings-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  width: 100%;
+}
+
+.profile-pic-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.profile-avatar {
+  width: 80px;
+  height: 80px;
+  border: 3px solid #007bff;
+}
+
+.upload-label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.save-btn {
+  background-color: #007bff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+.cancel-btn {
+  background-color: #6c757d;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+}

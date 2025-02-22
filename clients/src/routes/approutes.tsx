@@ -1,20 +1,16 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import ForgotPassword from "../pages/Forgot Password/forgot-password";
-import TaskList from "../pages/Task List/task-list";
 import ChangePassword from "../pages/Change Password/change-password";
-import Messages from "../pages/Messages/Messages";
-import PostTask from "../pages/post_tasks/post-task";
-import PaymentHistory from "../pages/dashboard_page/Payment History/payment-history";
-import PaymentMethods from "../pages/PaymentMethods/payment-methods";
-
-import FeaturedTask from "../pages/Featured Tasks/featured-task";
-import SettingsPage from "../pages/Setting/setting-page";
-import HelpPage from "../pages/Help/help-page";
-import SupportPage from "../pages/Support/support-page";
-import FAQPage from "../pages/FAQ/faq-page";
-import WalletPage from "../pages/Get Payment/wallet-page";
 import BrowseTaskPage from "../pages/Browse_task_page/BrowseTaskPage";
+import ForgotPassword from "../pages/Forgot Password/forgot-password";
+import FeaturedTask from "../pages/Featured Tasks/featured-task";
+import WalletPage from "../pages/Get Payment/wallet-page";
+import SupportPage from "../pages/Support/support-page";
+import PostTask from "../pages/post_tasks/post-task";
+import TaskList from "../pages/Task List/task-list";
+import Messages from "../pages/Messages/Messages";
+import HelpPage from "../pages/Help/help-page";
+import FAQPage from "../pages/FAQ/faq-page";
 
 import {
   LoginPage,
@@ -34,6 +30,12 @@ import {
   ServiceDetails,
   MyServicePage,
   BillingPaymentPage,
+  PaymentHistoryPage,
+  SettingLayout,
+  ProfileSettingPage,
+  AccountSettingPage,
+  NotificationSettingPage,
+  SubscriptionSettingPage,
 } from "../pages/page";
 
 const AppRoutes = () => (
@@ -44,7 +46,13 @@ const AppRoutes = () => (
       <Route path="/Signup" element={<SignupPage />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/ChangePassword" element={<ChangePassword />} />
-
+      {/* settings layouts */}
+      <Route path="/settings" element={<SettingLayout />}>
+        <Route path="profile" element={<ProfileSettingPage />} />
+        <Route path="account" element={<AccountSettingPage />} />
+        <Route path="notifications" element={<NotificationSettingPage />} />
+        <Route path="subscriptions" element={<SubscriptionSettingPage />} />
+      </Route>
       {/* Profile pages using ProfileLayout */}
       <Route path="/profile" element={<ProfileLayouts />}>
         <Route index element={<ProfilePage />} />
@@ -53,6 +61,7 @@ const AppRoutes = () => (
         <Route path="my-service" element={<MyServicePage />} />
         <Route path="create_service" element={<PostServicePage />} />
         <Route path="billing_payment" element={<BillingPaymentPage />} />
+        <Route path="payment-history" element={<PaymentHistoryPage />} />
       </Route>
 
       <Route path="/task_list" element={<TaskList />} />
@@ -70,9 +79,6 @@ const AppRoutes = () => (
       <Route path="/profile/view" element={<ProfileViewPage />} /> */}
       <Route path="/notifications" element={<NotificationPage />} />
       <Route path="/chat" element={<Messages />} />
-      <Route path="/payment-history" element={<PaymentHistory />} />
-      <Route path="/payment-method" element={<PaymentMethods />} />
-      <Route path="/settings" element={<SettingsPage />} />
       <Route path="/wallet" element={<WalletPage />} />
 
       <Route path="/blog" element={<BlogPage />} />
