@@ -3,7 +3,7 @@ import TaskFilter from "../../../components/data_filter/TaskFilter";
 import PageTitle from "../../../components/page_title/PageTitle";
 import { motion, AnimatePresence } from "framer-motion";
 import { Col, Container, Row, Table } from "react-bootstrap";
-import "./my_task_page.css";
+import "./my_service_page.css";
 import { IconButton, Stack } from "@mui/material";
 import {
   Apps,
@@ -112,7 +112,7 @@ const taskData = [
     author_name: "Susan Taylor",
   },
 ];
-const MyTaskPage: React.FC = () => {
+const MyServicePage: React.FC = () => {
   const [filteredTasks, setFilteredTasks] = useState(taskData);
   const [layout_style, setLayoutStyle] = useState("table");
   const [FilterOpen, setFilterOpen] = useState(true);
@@ -120,7 +120,7 @@ const MyTaskPage: React.FC = () => {
     <div className="my_task_page">
       <Container fluid>
         <div className="pb-3">
-          <PageTitle title="my tasks" subtitle="" />
+          <PageTitle title="my service" subtitle="" />
         </div>
 
         {/* MY TASKS LAYOUT AND FILTER ACTIONS */}
@@ -177,7 +177,7 @@ const MyTaskPage: React.FC = () => {
                     <ListingManageTable
                       id={0}
                       card_type={"card"}
-                      type={"gig"}
+                      type={"service"}
                       title={"I will design a professional logo"}
                       category={"Graphic Design"}
                       status={"completed"}
@@ -253,10 +253,10 @@ const styles: { [key: string]: React.CSSProperties } = {
     borderCollapse: "collapse",
     fontFamily: "Arial, sans-serif",
     backgroundColor: "#fff",
-    boxShadow: "0 2px 10px rgba(0, 0, 0, 0.1)",
-    borderRadius: 5,
+    boxShadow: "var(--box-shadow-light)",
     borderTopRightRadius: 10,
     borderTopLeftRadius: 10,
+    border: "1px solid var(--gray-light)",
   },
   th: {
     padding: "12px 15px",
@@ -267,4 +267,4 @@ const styles: { [key: string]: React.CSSProperties } = {
     color: "#555",
   },
 };
-export default MyTaskPage;
+export default MyServicePage;

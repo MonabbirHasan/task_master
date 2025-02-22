@@ -1,9 +1,5 @@
 /* Global Reset */
-body {
-  margin: 0;
-  padding: 0;
-  font-family: "Poppins", serif;
-}
+
 
 /* Theme Colors */
 :root {
@@ -11,7 +7,7 @@ body {
   --secondary-color: #ff6f61; /* Warm Coral - CTA & Highlights */
 
   /* Backgrounds */
-  --background-color: #f8f9fa; /* Light Mode Background */
+  --background-color: #ffffffff; /* Light Mode Background */
   --background-dark: #1c1c1e; /* Dark Mode Background */
 
   /* Text Colors */

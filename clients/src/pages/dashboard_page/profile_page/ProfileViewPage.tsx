@@ -87,7 +87,7 @@ const services_data = [
     reviews: 30,
   },
 ];
-const ProfileViewPage = () => {
+const ProfileViewPage: React.FC = () => {
   return (
     <>
       <Header />

@@ -32,6 +32,8 @@ import {
   NotificationPage,
   TaskDetails,
   ServiceDetails,
+  MyServicePage,
+  BillingPaymentPage,
 } from "../pages/page";
 
 const AppRoutes = () => (
@@ -48,7 +50,9 @@ const AppRoutes = () => (
         <Route index element={<ProfilePage />} />
         <Route path="favorites" element={<FavoritePage />} />
         <Route path="my-tasks" element={<MyTaskPage />} />
+        <Route path="my-service" element={<MyServicePage />} />
         <Route path="create_service" element={<PostServicePage />} />
+        <Route path="billing_payment" element={<BillingPaymentPage />} />
       </Route>
 
       <Route path="/task_list" element={<TaskList />} />

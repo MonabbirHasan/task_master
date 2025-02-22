@@ -1,0 +1,89 @@
+.profile-experience {
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+  
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .profile-experience:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* Header */
+  .experience-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .experience-header h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .experience-header p {
+    font-size: 1rem;
+    opacity: 0.8;
+  }
+  
+  /* Experience Details */
+  .experience-details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .experience-item {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    border-radius: 8px;
+    gap: 15px;
+    width: 100%;
+  }
+  
+  /* Flexbox for Text (Title and Value Side by Side) */
+  .text {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .text h3, .text p {
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+  
+  /* Icons */
+  .icon {
+    color: white;
+    font-size: 30px !important;
+  }
+  
+  /* Bio Section */
+  .bio {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 15px;
+    border-radius: 8px;
+  }
+  
+  .bio h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .bio p {
+    font-size: 1rem;
+    opacity: 0.9;
+    text-align: left;
+  }
+  

@@ -33,7 +33,7 @@ interface FormErrors {
   refundPolicy?: string;
   termsCondition?: string;
 }
-const PostServicePage = () => {
+const PostServicePage: React.FC = () => {
   const [InitialStep, setInitialStep] = useState(0);
   const [errors, setErrors] = useState<FormErrors>({});
   // Step 1: Basic Information

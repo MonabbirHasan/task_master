@@ -1,0 +1,33 @@
+.profile-card {
+  padding: 20px;
+  width: 100%;
+  transition: transform 0.3s ease-in-out;
+  margin-bottom: 10px;
+  cursor: pointer;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.profile-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--box-shadow-medium);
+}
+
+.profile-card h2 {
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-medium);
+  text-transform: capitalize;
+  text-align: left;
+  color: var(--gray-dark);
+}
+
+.profile-card p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 5px;
+  text-transform: capitalize;
+  text-align: left;
+}

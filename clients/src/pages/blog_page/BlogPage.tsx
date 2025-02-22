@@ -6,7 +6,7 @@ import "./blog_page.css";
 import { blog_data } from "../../utilis/blogs_data";
 import { Col, Container, Row } from "react-bootstrap";
 
-const BlogPage = () => {
+const BlogPage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const filteredBlogs = blog_data.filter((blog) =>

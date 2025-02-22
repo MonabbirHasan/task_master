@@ -9,7 +9,7 @@ import {
 } from "@mui/icons-material";
 import { NavLink } from "react-router-dom";
 
-const LoginPage = () => {
+const LoginPage: React.FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);

@@ -5,7 +5,7 @@ import { MoreVert } from "@mui/icons-material";
 interface ListingCardProps {
   id: number;
   card_type: string;
-  type: "task" | "gig"; // Distinguish Task vs Gig
+  type: "task" | "service"; // Distinguish Task vs Gig
   title: string;
   category: string;
   price?: number; // Only for gigs

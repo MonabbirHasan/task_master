@@ -1,0 +1,91 @@
+/* Billing Payment Page Styles */
+.billing-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .billing-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .balance-label {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .balance-amount {
+    font-size: 24px;
+    font-weight: bold;
+    color: #28a745;
+  }
+  
+  .withdraw-btn {
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+  }
+  
+  .withdraw-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .section-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  
+  .payment-method-list {
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+  }
+  
+  .payment-method {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: white;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .add-payment-btn {
+    background-color: #28a745;
+    color: white;
+    width: 100%;
+  }
+  
+  .add-payment-btn:hover {
+    background-color: #218838;
+  }
+  
+  .text-success {
+    color: var(--primary-color) !important;
+  }
+  
+  .text-danger {
+    color: #dc3545 !important;
+  }
+  
+  .table th, .table td {
+    padding: 12px;
+    text-align: left;
+  }
+  
+  @media (max-width: 768px) {
+    .billing-container {
+      padding: 15px;
+    }
+  
+    .balance-amount {
+      font-size: 20px;
+    }
+  }

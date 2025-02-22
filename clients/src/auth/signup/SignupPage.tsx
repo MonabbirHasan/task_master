@@ -5,7 +5,7 @@ import { Visibility, VisibilityOff } from "@mui/icons-material";
 import "./signup-page.css";
 import { NavLink } from "react-router-dom";
 
-const SignupPage = () => {
+const SignupPage: React.FC = () => {
   const [FullName, setFullName] = useState("");
   const [Email, setEmail] = useState("");
   const [password, setPassword] = useState("");

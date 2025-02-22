@@ -90,6 +90,7 @@
   align-items: center;
   gap: 10px;
 }
+/* service_card_left */
 .service_card .service_card_left {
   padding: 5px;
 }
@@ -137,13 +138,39 @@
 /* service_detais_right */
 .service_details .service_detais_right {
   padding: 10px;
+  position: sticky;
+  top: 10%;
+}
+.service_details .service_detais_right .service_details_price {
+  padding: 10px;
+  background-color: var(--background-color);
+  box-shadow: var(--box-shadow-light);
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-left: 5px solid var(--primary-color);
+  border-right: 5px solid var(--primary-color);
+  margin-bottom: 5px;
+}
+.service_details .service_detais_right .service_details_price span{
+  text-transform: capitalize;
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-regular);
+  color: var(--gray-dark);
+}
+.service_details .service_detais_right .service_details_price strong {
+  text-transform: capitalize;
+  font-size: var(--font-size-xxl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-color);
 }
 .service_detais_right .service_detais_author_profile {
   padding: 30px;
   background-color: var(--background-color);
   /* box-shadow: var(--box-shadow-light); */
   border-radius: 10px;
-  border: 1px solid var(--text-light);
+  border: 1px solid var(--gray-light);
 }
 .service_detais_author_profile .service_detais_author_img {
   padding: 10px;
@@ -156,6 +183,7 @@
   color: var(--text-color);
   text-align: center;
   margin: 0;
+  padding: 5px 0;
 }
 .service_detais_author_profile .service_detais_author_title {
   text-transform: capitalize;
@@ -165,7 +193,10 @@
   text-align: center;
   margin: 0;
 }
-
+.service_detais_author_profile .service_details_author_call_action {
+  padding-top: 10px;
+}
+/* service_details_author_experience */
 .service_detais_right .service_details_author_experience {
   padding: 20px;
   border: 1px solid var(--text-light);
@@ -173,6 +204,7 @@
   background-color: var(--background-color);
   border-radius: 10px;
   /* box-shadow: var(--box-shadow-light); */
+  border: 1px solid var(--gray-light);
 }
 .service_detais_right .service_details_author_experience h5 {
   padding: 10px 0;
@@ -180,16 +212,50 @@
   font-size: var(--font-size-large);
   font-weight: var(--font-weight-medium);
   color: var(--gray-dark);
+  text-align: center;
 }
 .service_details_author_experience .service_details_author_experience_list {
   display: flex;
   justify-content: space-between;
   padding: 10px 0;
-  border-bottom: 1px solid var(--gray-dark);
+  /* border-bottom: 1px solid var(--gray-dark); */
+}
+.service_details_author_experience .service_details_author_experience_list p {
+  text-transform: capitalize;
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-regular);
+  color: var(--text-color);
+  text-align: center;
+  margin: 0;
+  border-bottom: 1px solid var(--text-color);
 }
 .service_details_author_experience .service_details_author_experience_list li {
   list-style: none;
   text-transform: capitalize;
   font-size: var(--font-size-base);
   color: var(--gray-dark);
+}
+/* service_detail_author_portfolio */
+.service_detail_author_portfolio {
+  padding: 10px 0;
+}
+.service_detail_author_portfolio .service_detail_author_portfolio_card {
+  padding: 10px;
+  background: var(--background-color);
+  /* box-shadow: var(--box-shadow-light); */
+  border-radius: 10px;
+  border: 1px solid var(--gray-light);
+}
+.service_detail_author_portfolio .service_detail_author_portfolio_card h6 {
+  padding: 10px 0;
+  text-transform: capitalize;
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-medium);
+  color: var(--gray-dark);
+  text-align: center;
+}
+.service_detail_author_portfolio .service_detail_author_portfolio_card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
 }

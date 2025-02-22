@@ -158,7 +158,7 @@ const services_data = [
   },
 ];
 
-const ServicesPage = () => {
+const ServicesPage: React.FC = () => {
   const [filteredServices, setFilteredServices] =
     useState<any[]>(services_data);
   const navigate = useNavigate();

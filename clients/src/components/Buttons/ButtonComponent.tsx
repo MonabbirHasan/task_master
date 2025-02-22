@@ -1,4 +1,4 @@
-import React from "react";
+import React, { JSX } from "react";
 import { Button } from "@mui/material";
 
 interface ButtonProps {
@@ -9,6 +9,7 @@ interface ButtonProps {
   color: string | any;
   style?: React.CSSProperties;
   disabled: boolean;
+  startIcon?: JSX.Element;
 }
 
 const ButtonComponent: React.FC<ButtonProps> = ({
@@ -19,9 +20,11 @@ const ButtonComponent: React.FC<ButtonProps> = ({
   style = { textTransform: "capitalize" },
   size,
   disabled,
+  startIcon,
 }) => {
   return (
     <Button
+      startIcon={startIcon}
       disabled={disabled}
       color={color}
       size={size}

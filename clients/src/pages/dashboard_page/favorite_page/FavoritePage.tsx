@@ -116,7 +116,7 @@ const taskData = [
     author_name: "Susan Taylor",
   },
 ];
-const FavoritePage = () => {
+const FavoritePage: React.FC = () => {
   const [filteredTasks, setFilteredTasks] = useState(taskData);
   return (
     <div className="favorite_page">
@@ -151,11 +151,12 @@ const FavoritePage = () => {
                   status={items.status}
                   favorit_btn={() => {
                     alert("favorit");
-                  }}
+                  } }
                   message_btn={() => {
                     alert("message");
-                  }}
-                />
+                  } } onClick={function (): void {
+                    throw new Error("Function not implemented.");
+                  } }                />
               ))}
             </Col>
           </Row>

@@ -1,17 +1,14 @@
 import React from "react";
-import { Link, Outlet } from "react-router-dom";
-import Header from "../../components/layouts/Header/Header";
-import { NavLink } from "react-router-dom";
-import { Col, Nav, Row, Tab, Tabs } from "react-bootstrap";
+import { Outlet } from "react-router-dom";
+import Layout from "../../components/layouts/Layout";
 
-const ProfileLayouts = () => {
+const ProfileLayouts: React.FC = () => {
   return (
-    <div>
-      <Header />
+    <Layout>
       <main className="profile-content ">
         <Outlet />
       </main>
-    </div>
+    </Layout>
   );
 };
 
