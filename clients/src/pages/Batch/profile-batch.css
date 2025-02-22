@@ -1,95 +1,219 @@
-/* BatchStatsPage.css */
 .dashboard {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-    max-width: 600px;
-    margin: auto;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 70px 0;
 }
 
-h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #333;
-    text-align: center;
+.profile_badge_card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-h2 {
-    font-size: 20px;
-    margin-bottom: 10px;
-    color: #555;
+.profile_badge_card h2 {
+  font-size: var(--font-size-xxl);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-color);
+  text-transform: capitalize;
+  margin: 0;
 }
-
-.tier-section, .earnings-section {
-    margin-bottom: 20px;
-    padding: 15px;
-    background-color: #fff;
-    border-radius: 8px;
-    border: 1px solid #ddd;
+.profile_badge_card img {
+  width: 100px;
+  height: 100px;
+}
+.profile_badge_card,
+.earnings-section {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: var(--background-color);
+  box-shadow: var(--box-shadow-light);
+  /* height: 200px; */
+  padding: 20px;
+  border-radius: 8px;
 }
 
 .tier-info {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
-.tier {
-    font-size: 16px;
-    color: #666;
+.tier-info .tier {
+  font-size: 16px;
+  color: var(--gray-dark);
+  margin: 0;
 }
 
-.tier-label {
-    font-size: 18px;
-    font-weight: bold;
-    color: #333;
+.tier-info .tier-label {
+  text-transform: capitalize;
+  font-size: var(--font-size-small);
+  color: var(--gray-dark);
 }
 
-.service-fee {
-    font-size: 14px;
-    color: #888;
+.tier-info .service-fee {
+  text-transform: capitalize;
+  font-size: var(--font-size-small);
+  color: var(--gray-dark);
 }
 
 .earnings-section p {
-    font-size: 14px;
-    margin-bottom: 10px;
-    color: #555;
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #555;
 }
 
 .progress-bar {
-    background-color: #ddd;
-    height: 10px;
-    border-radius: 5px;
-    overflow: hidden;
-    margin: 10px 0;
+  background-color: #ddd;
+  height: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 10px 0;
 }
 
 .progress {
-    background-color: #4caf50;
-    height: 100%;
-    transition: width 0.5s;
+  background-color: #4caf50;
+  height: 100%;
+  transition: width 0.5s;
 }
 
 .earnings-labels {
-    display: flex;
-    justify-content: space-between;
-    font-size: 12px;
-    color: #666;
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #666;
 }
 
 .info-section {
-    text-align: center;
-    margin-top: 20px;
+  text-align: center;
+  margin-top: 20px;
 }
 
 .info-link {
-    font-size: 14px;
-    color: #007bff;
-    text-decoration: none;
+  font-size: 14px;
+  color: #007bff;
+  text-decoration: none;
 }
 
 .info-link:hover {
-    text-decoration: underline;
+  text-decoration: underline;
+}
+/* profile_badge_roadmap */
+.profile_badge_roadmap {
+  padding: 10px 0;
+}
+.profile_badge_roadmap .earnings-section h2 {
+  font-size: var(--font-size-xxl);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-color);
+  text-transform: capitalize;
+  margin: 0;
+  padding: 10px 0;
+}
+.profile_badge_roadmap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.earnings-section {
+  /* background: linear-gradient(135deg, #f5f7fa, #e1e8ed); */
+  border-radius: 12px;
+  padding: 20px;
+  width: 100%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h2 {
+  font-size: 22px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.tier-status {
+  margin: 10px 0;
+}
+
+.tier-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.bronze {
+  background-color: var(--secondary-color);
+}
+
+.silver {
+  background-color: #c0c0c0;
+}
+
+.progress-bar {
+  background-color: red;
+  height: 12px;
+  border-radius: 6px;
+  overflow: hidden;
+  margin: 10px 0;
+}
+
+.progress {
+  background: red;
+  height: 100%;
+  transition: width 0.5s;
+}
+
+.earnings-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #666;
+  margin-top: 5px;
+}
+
+.tier-benefits {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 15px;
+  text-align: left;
+}
+
+.tier-benefits p {
+  font-weight: bold;
+}
+
+.tier-benefits ul {
+  list-style: none;
+  padding: 0;
+}
+
+.tier-benefits li {
+  font-size: 14px;
+  padding: 5px 0;
+  display: flex;
+  align-items: center;
+}
+
+.time-based-goal {
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 15px;
+  color: #ff5722;
+}
+
+.cta-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #0056b3;
 }

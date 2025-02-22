@@ -1,20 +1,17 @@
 import React, { useMemo, useState } from "react";
 import { Card, Carousel, Col, Container, Row } from "react-bootstrap";
-import { motion } from "framer-motion";
-import { Button, IconButton, Stack } from "@mui/material";
+import { Button } from "@mui/material";
 import "./home-page.css";
 import Layout from "../../components/layouts/Layout";
 import HowItWorks from "../../components/how_it_work/HowItWorks";
-import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import TaskCard from "../../components/task_card/task-card";
-import { FavoriteRounded } from "@mui/icons-material";
 import HomeBanner from "../../components/home_banner/home-banner";
 import FeaturedListing from "../../components/featured_listing/FeaturedListing";
+import { useNavigate } from "react-router-dom";
 const Home: React.FC = () => {
   const [index, setIndex] = useState<number>(0);
-
+  const navigate = useNavigate();
   const handleSelect = (selectedIndex: number) => {
     setIndex(selectedIndex);
   };
@@ -131,7 +128,11 @@ const Home: React.FC = () => {
                       and connect with skilled professionals.
                     </Card.Text>
                     <div className="cta-buttons">
-                      <Button variant="contained" className="cta-btn">
+                      <Button
+                        onClick={() => navigate("/post-task")}
+                        variant="contained"
+                        className="cta-btn"
+                      >
                         Post a Task
                       </Button>
                       <Button variant="outlined" className="cta-btn">

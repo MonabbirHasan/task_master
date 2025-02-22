@@ -36,6 +36,7 @@ import {
   AccountSettingPage,
   NotificationSettingPage,
   SubscriptionSettingPage,
+  ProfileBadge,
 } from "../pages/page";
 
 const AppRoutes = () => (
@@ -52,6 +53,7 @@ const AppRoutes = () => (
         <Route path="account" element={<AccountSettingPage />} />
         <Route path="notifications" element={<NotificationSettingPage />} />
         <Route path="subscriptions" element={<SubscriptionSettingPage />} />
+        
       </Route>
       {/* Profile pages using ProfileLayout */}
       <Route path="/profile" element={<ProfileLayouts />}>
@@ -62,6 +64,7 @@ const AppRoutes = () => (
         <Route path="create_service" element={<PostServicePage />} />
         <Route path="billing_payment" element={<BillingPaymentPage />} />
         <Route path="payment-history" element={<PaymentHistoryPage />} />
+        <Route path="my-progress" element={<ProfileBadge />} />
       </Route>
 
       <Route path="/task_list" element={<TaskList />} />

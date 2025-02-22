@@ -366,13 +366,7 @@ const PostServicePage: React.FC = () => {
     { step: 4, title: "Availability & Language" },
     { step: 5, title: "Complete" },
   ];
-  const steps = [
-    "Basic Information",
-    "Pricing & Delivery",
-    "Gig Requirements",
-    "Availability & Language",
-    "Complete",
-  ];
+ 
 
   return (
     <div className="post_service_page">
@@ -412,7 +406,7 @@ const PostServicePage: React.FC = () => {
                 color: "var(--text-light)",
                 border: "none",
               }}
-              size={"small"}
+              size={"medium"}
               color={undefined}
               disabled={InitialStep === 0}
             />
@@ -421,8 +415,13 @@ const PostServicePage: React.FC = () => {
               <ButtonComponent
                 onClick={handleNext}
                 btn_label={"Next"}
+                style={{
+                  background: "var(--primary-color)",
+                  color: "var(--text-light)",
+                  border: "none",
+                }}
                 variant={undefined}
-                size={"small"}
+                size={"medium"}
                 color={undefined}
                 disabled={false}
               />

@@ -1,10 +1,26 @@
 import { useState } from "react";
-import { Link, useParams } from "react-router-dom";
-import Header from "../../components/layouts/Header/Header";
-import Footer from "../../components/layouts/Footer/Footer";
-import "./blog_page.css";
+import { Col, Container, Form, Row } from "react-bootstrap";
+import BlogCard from "../../components/blog_card/BlogCard";
+import Layout from "../../components/layouts/Layout";
 import { blog_data } from "../../utilis/blogs_data";
-import { Col, Container, Row } from "react-bootstrap";
+import { FormControl } from "@mui/material";
+import { Link } from "react-router-dom";
+import "./blog_page.css";
+const data = {
+  blog_id: 1,
+  title: "JKP Raid Bookstores, Seize 688",
+  author: {
+    user_id: 123,
+    name: "John Doe",
+    profile_image_url:
+      "https://bloximages.chicago2.vip.townnews.com/romesentinel.com/content/tncms/assets/v3/editorial/4/26/4268520b-558e-5762-885d-5d9bf8c281c7/67ae8a1d0f13d.image.jpg?resize=300%2C200",
+  },
+  content: "Gottesdienst für Betroffene des Münchner Anschlags...",
+  cover_image_url:
+    "https://kashmirobserver.net/wp-content/uploads/2024/07/JK-Police-Logo-1.jpg",
+  likes_count: 120,
+  created_at: "2025-02-22T10:00:00Z",
+};
 
 const BlogPage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -14,18 +30,22 @@ const BlogPage: React.FC = () => {
   );
 
   return (
-    <div className=" ">
-      <Header />
+    <Layout>
       <Container>
         <div className="blog-container">
-          <input
-            type="text"
-            placeholder="Search blogs..."
-            className="search-bar"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-          <div className="">
+          {/* BLOG SEARCH AREA */}
+          <div className="blog_search">
+            <FormControl fullWidth sx={{ pb: 4 }}>
+              <Form.Control
+                type="text"
+                placeholder="Search blogs..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+              />
+            </FormControl>
+          </div>
+          
+          <section className="blog_section">
             <Row lg={4}>
               {filteredBlogs.map((blog) => (
                 <Col>
@@ -49,39 +69,10 @@ const BlogPage: React.FC = () => {
                 </Col>
               ))}
             </Row>
-          </div>
+          </section>
         </div>
       </Container>
-
-      <Footer />
-    </div>
-  );
-};
-
-const BlogDetail = () => {
-  const { id } = useParams();
-  const blog = blog_data.find((b) => b.article_id === String(id));
-
-  if (!blog) {
-    return <h2>Blog not found</h2>;
-  }
-
-  return (
-    <div className="main-container">
-      <Header />
-      <div className="blog-detail-container">
-        <img
-          src={blog.image_url == null ? "" : blog.image_url}
-          alt={blog.title}
-          className="blog-detail-image"
-        />
-        <h1>{blog.title}</h1>
-        <span className="blog-category">{blog.category}</span>
-        <p>By {blog.creator} • 34 Comments</p>
-        <p>{blog.content}</p>
-      </div>
-      <Footer />
-    </div>
+    </Layout>
   );
 };
 

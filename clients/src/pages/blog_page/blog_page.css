@@ -1,13 +1,8 @@
 .blog-container {
   padding: 40px 0;
 }
-
-.search-bar {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 20px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+.blog_section {
+  padding: 10px 0;
 }
 
 .blog-container .blog-card {
@@ -31,12 +26,6 @@
   text-transform: capitalize;
   color: var(--gray-dark);
 }
-
-
-
-
-
-
 
 .blog-detail-container {
   max-width: 900px;

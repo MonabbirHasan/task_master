@@ -46,3 +46,43 @@
   "gig_terms_and_conditions": "No refunds for digital products after delivery.",
   "seller_experience_level": "Expert"
 }
+// new details to show in card
+{
+  "gig_id": "67890",
+  "title": "Professional Logo Design for Your Brand",
+  "category": "Graphic Design",
+  "description": "Get a modern, minimalist logo that represents your brand identity.",
+  "price": "₹5000",
+  "delivery_time": "3 Days",
+  "rating": 4.9,
+  "reviews_count": 150,
+  "gig_image_url": "https://example.com/images/logo_design_sample.jpg",
+  "seller": {
+    "name": "John Designs",
+    "profile_image_url": "https://example.com/images/johndesigns_profile.jpg",
+    "rating": 4.8,
+    "review_count": 200,
+    "location": "Remote",
+    "social_proof": "50+ Logos Designed"
+  },
+  "tags": [
+    "Logo Design",
+    "Branding",
+    "Photoshop",
+    "Minimalist"
+  ],
+  "gig_type": "Standard",
+  "cta": "Order Now",
+  "availability": "Available Now",
+  "extras": [
+    {
+      "name": "Extra Fast Delivery",
+      "price": "₹1000"
+    },
+    {
+      "name": "Add Source Files",
+      "price": "₹500"
+    }
+  ],
+  "location": "Remote"
+}

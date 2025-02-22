@@ -177,7 +177,7 @@ const MyTaskPage: React.FC = () => {
                     <ListingManageTable
                       id={0}
                       card_type={"card"}
-                      type={"gig"}
+                      type={"task"}
                       title={"I will design a professional logo"}
                       category={"Graphic Design"}
                       status={"completed"}

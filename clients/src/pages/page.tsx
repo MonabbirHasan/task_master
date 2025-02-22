@@ -23,3 +23,4 @@ export { default as FavoritePage } from "./dashboard_page/favorite_page/Favorite
 export { default as ProfilePage } from "./dashboard_page/profile_page/ProfilePage";
 export { default as MyTaskPage } from "./dashboard_page/my_task_page/MyTaskPage";
 export { default as ProfileLayouts } from "./dashboard_page/ProfileLayouts";
+export { default as ProfileBadge } from "./Batch/profile-batch";

@@ -1,60 +1,47 @@
-.account-settings-container {
-    background-color: #f8f9fa;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-  }
-  
-  .account-settings-card {
-    background: white;
-    padding: 30px;
-    border-radius: 12px;
-    width: 100%;
-  }
-  
-  .button-group {
-    display: flex;
-    gap: 10px;
-    justify-content: flex-end;
-    margin-top: 15px;
-  }
-  
-  .save-btn {
-    background-color: #007bff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-  }
-  
-  .cancel-btn {
-    background-color: #6c757d;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-  }
-  
-  .deactivate-account {
-    margin-top: 30px;
-    padding: 20px;
-    background: #fff3f3;
-    border-radius: 8px;
-    text-align: center;
-  }
-  
-  .deactivate-account h5 {
-    color: #dc3545;
-  }
-  
-  .deactivate-account p {
-    font-size: 14px;
-  }
-  
-  .deactivate-account button {
-    background-color: #dc3545;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 8px;
-  }
-  
+.account-settings-card {
+  background: var(--background-color);
+  padding: 30px;
+  border-radius: 12px;
+  width: 100%;
+}
+.account-settings-card h1 {
+  text-transform: capitalize;
+  color: var(--text-color);
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-medium);
+  padding: 10px 0;
+}
+.account_setting_action_btn {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 15px;
+}
+/* account_setting_change_password */
+.account_setting_change_password {
+  padding: 5px 0;
+}
+.account_setting_change_password h2 {
+  text-transform: capitalize;
+  color: var(--text-color);
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-medium);
+  padding: 10px 0;
+}
+/* deactivate-account */
+.deactivate-account {
+  margin-top: 30px;
+  padding: 20px;
+  background: var(--gray-light);
+  text-align: center;
+  border-radius: 10px;
+}
+
+.deactivate-account h5 {
+  color: #dc3545;
+}
+
+.deactivate-account p {
+  font-size: 14px;
+  text-align: center;
+}

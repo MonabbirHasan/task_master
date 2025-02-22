@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import { TextField, Avatar, Box } from "@mui/material";
 import "./profile_setting_page.css";
+import ButtonComponent from "../../../components/Buttons/ButtonComponent";
 const ProfileSettingsPage: React.FC = () => {
   const [profilePic, setProfilePic] = useState<string>();
   const [formData, setFormData] = useState({
@@ -98,12 +99,38 @@ const ProfileSettingsPage: React.FC = () => {
 
         {/* Save & Cancel Buttons */}
         <div className="button-group">
-          <Button variant="primary" className="save-btn">
-            Save Changes
-          </Button>
-          <Button variant="secondary" className="cancel-btn">
-            Cancel
-          </Button>
+          <ButtonComponent
+            onClick={function (): void {
+              throw new Error("Function not implemented.");
+            }}
+            style={{
+              textTransform: "capitalize",
+              background: "var(--primary-color)",
+              color: "var(--text-light)",
+              border: "none",
+            }}
+            btn_label={"save changes"}
+            variant={undefined}
+            size={undefined}
+            color={undefined}
+            disabled={false}
+          />
+          <ButtonComponent
+            onClick={function (): void {
+              throw new Error("Function not implemented.");
+            }}
+            style={{
+              textTransform: "capitalize",
+              background: "var(--error-color)",
+              color: "var(--text-light)",
+              border: "none",
+            }}
+            btn_label={"Cancel"}
+            variant={undefined}
+            size={undefined}
+            color={undefined}
+            disabled={false}
+          />
         </div>
       </Form>
     </div>

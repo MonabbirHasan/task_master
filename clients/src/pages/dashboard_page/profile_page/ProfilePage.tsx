@@ -16,6 +16,7 @@ import PortfolioCard from "../../../components/profile_portfolio/PortfolioCard";
 import ButtonComponent from "../../../components/Buttons/ButtonComponent";
 import { Col, Container, Row } from "react-bootstrap";
 import "./profile_page.css";
+import { useNavigate } from "react-router-dom";
 interface PortfolioItem {
   id: number;
   title: string;
@@ -24,6 +25,7 @@ interface PortfolioItem {
   link: string;
 }
 const ProfilePage: React.FC = () => {
+  const navigate = useNavigate();
   const [portfolio, setPortfolio] = useState<PortfolioItem[]>([
     {
       id: 1,
@@ -119,6 +121,23 @@ const ProfilePage: React.FC = () => {
                       </span>
                       <span>My level - 1</span>
                     </p>
+                    <ButtonComponent
+                      onClick={function (): void {
+                        navigate("/profile/my-progress");
+                      }}
+                      style={{
+                        textTransform: "capitalize",
+                        width: "100%",
+                        background: "var(--secondary-color)",
+                        color: "var(--text-light)",
+                        border: "none",
+                      }}
+                      btn_label={"my progress"}
+                      variant={undefined}
+                      size={undefined}
+                      color={undefined}
+                      disabled={false}
+                    />
                   </div>
                   {/* author profile about */}
                   <div className="profile_page_author_about">
